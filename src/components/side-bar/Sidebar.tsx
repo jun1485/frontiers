@@ -44,7 +44,7 @@ export default function Sidebar() {
           <ul className="space-y-2 text-sm ml-2">
             <li>
               <Link
-                href="/"
+                href="/eris"
                 className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
               >
                 1. Overview
@@ -52,7 +52,7 @@ export default function Sidebar() {
             </li>
             <li>
               <Link
-                href="/#eris-hq"
+                href="/eris#headquarters"
                 className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
               >
                 2. Headquarters Design
@@ -60,10 +60,18 @@ export default function Sidebar() {
             </li>
             <li>
               <Link
-                href="/#eris-departments"
+                href="/eris#special-features"
                 className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
               >
-                3. Departments
+                3. Special Features
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/eris#divisions"
+                className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
+              >
+                4. Divisions
               </Link>
             </li>
           </ul>

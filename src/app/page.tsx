@@ -6,53 +6,28 @@ export default function Home() {
     <>
       <header className="mb-10">
         <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-400 tracking-tight">
-          Frontiers Universe Wiki
+          Frontiers World
         </h1>
         <p className="mt-3 text-xl text-gray-300">
-          Where future meets the past, the story of New Egypt
+          Where ancient civilizations meet futuristic technology
         </p>
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <Link
-            href="/"
-            className="bg-gradient-to-r from-cyan-800 to-cyan-700 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-200 border border-cyan-600"
-          >
-            <h3 className="text-lg font-semibold text-cyan-300">ERIS</h3>
-            <p className="text-sm text-gray-300">
-              Intelligence agency of New Egypt
-            </p>
-          </Link>
-          <Link
-            href="/mythology"
-            className="bg-gradient-to-r from-amber-800 to-amber-700 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-200 border border-amber-600"
-          >
-            <h3 className="text-lg font-semibold text-amber-300">
-              Ancient Egyptian Mythology
-            </h3>
-            <p className="text-sm text-gray-300">
-              Mythology that forms the basis of the world
-            </p>
-          </Link>
-          <Link
-            href="/universe"
-            className="bg-gradient-to-r from-purple-800 to-purple-700 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-200 border border-purple-600"
-          >
-            <h3 className="text-lg font-semibold text-purple-300">
-              Frontiers Universe
-            </h3>
-            <p className="text-sm text-gray-300">
-              Futuristic reinterpretation of ancient civilizations
-            </p>
-          </Link>
+        <div className="mt-6 text-gray-400 max-w-3xl">
+          <p>
+            In 285 BC, coinciding with the establishment of the Library of
+            Alexandria, an event known as "Prometheus' Second Fire" marked the
+            beginning of a new era. A meteorite containing advanced alien
+            knowledge in the form of tablets became the catalyst for
+            unprecedented technological advancement.
+          </p>
         </div>
       </header>
 
-      <section id="eris-overview" className="mb-12">
-        <div className="bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700">
-          <div className="bg-gradient-to-r from-cyan-900 to-gray-800 px-6 py-4 border-b border-gray-700">
-            <h2 className="text-3xl font-bold text-cyan-300 flex items-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <Link href="/eris" className="group">
+          <div className="bg-gradient-to-br from-cyan-900 to-gray-800 rounded-xl p-6 shadow-xl border border-cyan-800/30 hover:border-cyan-600/50 transition-all duration-300 h-full">
+            <div className="flex items-center mb-4">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-7 w-7 mr-2"
+                className="h-6 w-6 text-cyan-400 mr-2"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -60,139 +35,130 @@ export default function Home() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  strokeWidth={1.5}
+                  d="M2 12C2 12 5.63636 7 12 7C18.3636 7 22 12 22 12C22 12 18.3636 17 12 17C5.63636 17 2 12 2 12Z"
                 />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              <h2 className="text-2xl font-bold text-cyan-400">ERIS</h2>
+            </div>
+            <p className="text-gray-300 mb-4">
+              Eye of Ra Intelligence Service - New Egypt's elite spy and cyber
+              warfare division
+            </p>
+            <ul className="text-gray-400 space-y-2 text-sm">
+              <li>• Advanced surveillance systems</li>
+              <li>• Cyber operations & signal intelligence</li>
+              <li>• Covert missions & espionage</li>
+            </ul>
+          </div>
+        </Link>
+
+        <Link href="/mythology" className="group">
+          <div className="bg-gradient-to-br from-amber-900 to-gray-800 rounded-xl p-6 shadow-xl border border-amber-800/30 hover:border-amber-600/50 transition-all duration-300 h-full">
+            <div className="flex items-center mb-4">
+              <svg
+                className="h-6 w-6 text-amber-400 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  strokeWidth={1.5}
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                 />
               </svg>
-              ERIS (Eye of Ra Intelligence Service)
-            </h2>
-            <p className="text-gray-300 mt-1">The Eyes of New Egypt</p>
-          </div>
-          <div className="p-6">
-            <h3 className="text-2xl font-semibold mb-4 text-yellow-400">
-              1. ERIS Overview
-            </h3>
-            <div className="space-y-4 text-gray-200 leading-relaxed">
-              <p>
-                <strong className="text-cyan-400">Name:</strong> "The Eye of Ra"
-                symbolizes surveillance, power, and protection, which aligns
-                well with the agency's surveillance and covert operations. It
-                also maintains a strong connection to Egyptian mythology, adding
-                cultural depth to New Egypt within the story.
-              </p>
-              <p>
-                <strong className="text-cyan-400">Function:</strong> New Egypt's
-                elite intelligence and cyber warfare unit. Specializing in
-                hacking, covert operations, and surveillance, dedicated to
-                protecting New Egypt's interests and uncovering secrets of
-                competing civilizations. Utilizing cutting-edge technology and
-                ancient wisdom, ERIS agents are always one step ahead, ensuring
-                New Egypt's safety and advantage in the space race.
-              </p>
+              <h2 className="text-2xl font-bold text-amber-400">
+                Ancient Egyptian Mythology
+              </h2>
             </div>
+            <p className="text-gray-300 mb-4">
+              The mythological foundation that shapes the Frontiers World
+            </p>
+            <ul className="text-gray-400 space-y-2 text-sm">
+              <li>• Creation myths and early gods</li>
+              <li>• Divine conflicts and roles</li>
+              <li>• Modern interpretations</li>
+            </ul>
           </div>
-        </div>
-      </section>
+        </Link>
 
-      <section id="eris-hq" className="mb-12">
-        <div className="bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700">
-          <div className="p-6">
-            <h3 className="text-2xl font-semibold mb-4 text-yellow-400">
-              2. ERIS Headquarters
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-4 text-gray-200">
-                <h4 className="text-xl font-medium text-cyan-400">Exterior</h4>
-                <p>
-                  A sleek, modern pyramid shape paying homage to ancient
-                  Egyptian pyramids. The smooth, reflective surface made of
-                  advanced materials such as titanium and glass adds a
-                  futuristic feel.
-                </p>
-                <h4 className="text-xl font-medium text-cyan-400">Interior</h4>
-                <p>
-                  A spacious, grand lobby boasting high ceilings and polished
-                  marble floors. In the center hangs a large holographic Eye of
-                  Ra, slowly rotating and emitting a soft ambient light.
-                </p>
-              </div>
-              <div className="bg-gray-700 h-64 rounded-lg flex items-center justify-center">
-                <p className="text-gray-400 italic">
-                  Headquarters image display area
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="eris-departments" className="mb-12">
-        <div className="bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700">
-          <div className="p-6">
-            <h3 className="text-2xl font-semibold mb-4 text-yellow-400">
-              3. ERIS Departments
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-gray-700 p-4 rounded-lg">
-                <h4 className="text-lg font-medium text-cyan-400">
-                  Cyber Operations Department
-                </h4>
-                <p className="text-gray-300 mt-2">Alexandria, New Egypt</p>
-                <p className="text-gray-300 mt-1">
-                  Responsible for cybersecurity and cyber warfare operations,
-                  specializing in hacking, cyber intelligence, and digital
-                  surveillance.
-                </p>
-              </div>
-              <div className="bg-gray-700 p-4 rounded-lg">
-                <h4 className="text-lg font-medium text-cyan-400">
-                  Signal Intelligence Department
-                </h4>
-                <p className="text-gray-300 mt-2">Luxor, New Egypt</p>
-                <p className="text-gray-300 mt-1">
-                  Responsible for intercepting and decoding communications,
-                  specializing in satellite surveillance, signal interception,
-                  and code breaking.
-                </p>
-              </div>
-              <div className="bg-gray-700 p-4 rounded-lg">
-                <h4 className="text-lg font-medium text-cyan-400">
-                  Research and Development Department
-                </h4>
-                <p className="text-gray-300 mt-2">Memphis, New Egypt</p>
-                <p className="text-gray-300 mt-1">
-                  Responsible for developing advanced technologies and
-                  analytical tools, specializing in hacking tools, surveillance
-                  technology, and AI system innovations.
-                </p>
-              </div>
-              <div className="bg-gray-700 p-4 rounded-lg">
-                <h4 className="text-lg font-medium text-cyan-400">
-                  Covert Operations Department
-                </h4>
-                <p className="text-gray-300 mt-2">Thebes, New Egypt</p>
-                <p className="text-gray-300 mt-1">
-                  Responsible for planning and executing covert missions and
-                  espionage activities, specializing in infiltration operations,
-                  information gathering, and penetration.
-                </p>
-              </div>
-            </div>
-            <div className="mt-4 text-center">
-              <Link
-                href="/eris"
-                className="inline-block mt-4 px-6 py-2 bg-cyan-800 text-cyan-200 rounded-full hover:bg-cyan-700 transition duration-200"
+        <Link href="/universe" className="group">
+          <div className="bg-gradient-to-br from-purple-900 to-gray-800 rounded-xl p-6 shadow-xl border border-purple-800/30 hover:border-purple-600/50 transition-all duration-300 h-full">
+            <div className="flex items-center mb-4">
+              <svg
+                className="h-6 w-6 text-purple-400 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                View More Department Information
-              </Link>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              </svg>
+              <h2 className="text-2xl font-bold text-purple-400">
+                Frontiers Universe
+              </h2>
             </div>
+            <p className="text-gray-300 mb-4">
+              A world where ancient civilizations embrace futuristic technology
+            </p>
+            <ul className="text-gray-400 space-y-2 text-sm">
+              <li>• Major civilizations</li>
+              <li>• Society and environment</li>
+              <li>• Space exploration</li>
+            </ul>
           </div>
+        </Link>
+      </div>
+
+      {/* Featured Section */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-gray-200 mb-6">
+          Featured Story
+        </h2>
+        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <h3 className="text-xl font-semibold text-yellow-400 mb-3">
+            Tarek's Journey
+          </h3>
+          <p className="text-gray-300">
+            A former sensor manager at Hapy Corporation, Tarek's life changes
+            when he's recruited by Commander Osiris following a military
+            incident affecting the Nile's water quality. Faced with moral
+            choices and approached by Roman agents, he maintains his loyalty to
+            New Egypt while contributing to the success of the "Amun's Dream"
+            Mars mission.
+          </p>
+        </div>
+      </section>
+
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <h3 className="text-xl font-semibold text-cyan-400 mb-4">
+            Major Locations
+          </h3>
+          <ul className="space-y-2 text-gray-300">
+            <li>• Nile River Region - New Egypt's core territory</li>
+            <li>• Krypteia Forest - Spartan military training grounds</li>
+            <li>• Lunar Base - Space exploration outpost</li>
+            <li>• Mars Colony - "Amun's Dream" project site</li>
+          </ul>
+        </div>
+        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <h3 className="text-xl font-semibold text-purple-400 mb-4">
+            Key Themes
+          </h3>
+          <ul className="space-y-2 text-gray-300">
+            <li>• Technological advancement vs. environmental decline</li>
+            <li>• Political and moral conflicts</li>
+            <li>• Space exploration as escape and opportunity</li>
+            <li>• Balance between tradition and progress</li>
+          </ul>
         </div>
       </section>
     </>
