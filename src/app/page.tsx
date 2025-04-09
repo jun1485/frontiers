@@ -14,10 +14,10 @@ export default function Home() {
         <div className="mt-6 text-gray-400 max-w-3xl">
           <p>
             In 285 BC, coinciding with the establishment of the Library of
-            Alexandria, an event known as "Prometheus' Second Fire" marked the
-            beginning of a new era. A meteorite containing advanced alien
-            knowledge in the form of tablets became the catalyst for
-            unprecedented technological advancement.
+            Alexandria, an event known as &quot;Prometheus&apos; Second
+            Fire&quot; marked the beginning of a new era. A meteorite containing
+            advanced alien knowledge in the form of tablets became the catalyst
+            for unprecedented technological advancement.
           </p>
         </div>
       </header>
@@ -43,8 +43,8 @@ export default function Home() {
               <h2 className="text-2xl font-bold text-cyan-400">ERIS</h2>
             </div>
             <p className="text-gray-300 mb-4">
-              Eye of Ra Intelligence Service - New Egypt's elite spy and cyber
-              warfare division
+              Eye of Ra Intelligence Service - New Egypt&apos;s elite spy and
+              cyber warfare division
             </p>
             <ul className="text-gray-400 space-y-2 text-sm">
               <li>• Advanced surveillance systems</li>
@@ -124,15 +124,15 @@ export default function Home() {
         </h2>
         <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
           <h3 className="text-xl font-semibold text-yellow-400 mb-3">
-            Tarek's Journey
+            Tarek&apos;s Journey
           </h3>
           <p className="text-gray-300">
-            A former sensor manager at Hapy Corporation, Tarek's life changes
-            when he's recruited by Commander Osiris following a military
-            incident affecting the Nile's water quality. Faced with moral
-            choices and approached by Roman agents, he maintains his loyalty to
-            New Egypt while contributing to the success of the "Amun's Dream"
-            Mars mission.
+            A former sensor manager at Hapy Corporation, Tarek&apos;s life
+            changes when he&apos;s recruited by Commander Osiris following a
+            military incident affecting the Nile&apos;s water quality. Faced
+            with moral choices and approached by Roman agents, he maintains his
+            loyalty to New Egypt while contributing to the success of the
+            &quot;Amun&apos;s Dream&quot; Mars mission.
           </p>
         </div>
       </section>
@@ -143,10 +143,10 @@ export default function Home() {
             Major Locations
           </h3>
           <ul className="space-y-2 text-gray-300">
-            <li>• Nile River Region - New Egypt's core territory</li>
+            <li>• Nile River Region - New Egypt&apos;s core territory</li>
             <li>• Krypteia Forest - Spartan military training grounds</li>
             <li>• Lunar Base - Space exploration outpost</li>
-            <li>• Mars Colony - "Amun's Dream" project site</li>
+            <li>• Mars Colony - &quot;Amun&apos;s Dream&quot; project site</li>
           </ul>
         </div>
         <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">

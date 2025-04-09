@@ -33,7 +33,7 @@ export default function UniversePage() {
                   d="M13 10V3L4 14h7v7l9-11h-7z"
                 />
               </svg>
-              Origin Event: Prometheus's Second Fire
+              Origin Event: Prometheus&apos;s Second Fire
             </h2>
           </div>
           <div className="p-6">
@@ -43,14 +43,14 @@ export default function UniversePage() {
                 meteor approached Earth and exploded in the atmosphere. Among
                 the fragments was a tablet-shaped artifact containing knowledge
                 from an advanced alien civilization. This event became known as
-                the "Return of Prometheus," and the meteor was named
-                "Prometheus's Second Fire."
+                the &quot;Return of Prometheus,&quot; and the meteor was named
+                &quot;Prometheus&apos;s Second Fire.&quot;
               </p>
               <div className="bg-gray-700 bg-opacity-30 p-4 rounded-lg my-6 border-l-4 border-purple-600">
                 <p className="italic text-purple-200">
-                  "Humanity received fire from the sky for a second time. The
-                  first warmed their bodies, but the second awakened their
-                  minds."
+                  &quot;Humanity received fire from the sky for a second time.
+                  The first warmed their bodies, but the second awakened their
+                  minds.&quot;
                 </p>
                 <p className="text-right mt-2 text-sm text-gray-400">
                   - Records from the Library of Alexandria
@@ -104,7 +104,7 @@ export default function UniversePage() {
                       Major Projects
                     </h4>
                     <p className="text-gray-400 text-sm">
-                      Amun's Dream (Mars Exploration Mission)
+                      Amun&apos;s Dream (Mars Exploration Mission)
                     </p>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export default function UniversePage() {
                     </h4>
                     <p className="text-gray-400 text-sm">
                       Technology espionage against other civilizations,
-                      sabotaging New Egypt's space program
+                      sabotaging New Egypt&apos;s space program
                     </p>
                   </div>
                 </div>
@@ -264,14 +264,14 @@ export default function UniversePage() {
             <div className="space-y-6">
               <div className="p-4 bg-gray-700 bg-opacity-20 rounded-lg">
                 <h3 className="text-xl font-semibold text-purple-300 mb-2">
-                  Tarek's Story
+                  Tarek&apos;s Story
                 </h3>
                 <p className="text-gray-200">
                   Tarek, who managed sensors at Hapy Corporation, is selected by
                   Commander Osiris for a space mission following a military
-                  incident affecting the Nile River's water purity. Approached
-                  by Roman agents, he faces moral choices but maintains loyalty
-                  to New Egypt and helps initiate the mission.
+                  incident affecting the Nile River&apos;s water purity.
+                  Approached by Roman agents, he faces moral choices but
+                  maintains loyalty to New Egypt and helps initiate the mission.
                 </p>
               </div>
 
@@ -280,9 +280,10 @@ export default function UniversePage() {
                   Commander Osiris
                 </h3>
                 <p className="text-gray-200">
-                  Leading the "Amun's Dream" Mars mission, experiencing personal
-                  conflict between duty and family (relationship with daughter
-                  Bastet), and managing security against Roman interference.
+                  Leading the &quot;Amun&apos;s Dream&quot; Mars mission,
+                  experiencing personal conflict between duty and family
+                  (relationship with daughter Bastet), and managing security
+                  against Roman interference.
                 </p>
               </div>
             </div>

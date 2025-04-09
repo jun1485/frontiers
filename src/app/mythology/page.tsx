@@ -42,14 +42,14 @@ export default function MythologyPage() {
             <div className="space-y-4 text-gray-200 leading-relaxed">
               <p>
                 The world was filled with an infinite primordial water called
-                'Nun', a state where only darkness and chaos existed. There was
-                no life, no death, no sky, and no earth.
+                &apos;Nun&apos;, a state where only darkness and chaos existed.
+                There was no life, no death, no sky, and no earth.
               </p>
               <div className="bg-gray-700 p-4 rounded-lg my-6 border-l-4 border-amber-600">
                 <p className="italic text-amber-200">
-                  "In the beginning, there was the infinite primordial water,
-                  Nun. Within it, all possibilities slept, and the world had
-                  neither form nor order."
+                  &quot;In the beginning, there was the infinite primordial
+                  water, Nun. Within it, all possibilities slept, and the world
+                  had neither form nor order.&quot;
                 </p>
                 <p className="text-right mt-2 text-sm text-gray-400">
                   - Heliopolis Creation Myth
@@ -72,8 +72,8 @@ export default function MythologyPage() {
                   According to the Heliopolis myth, Atum, the first self-created
                   god, was born from a sacred lotus flower. In other versions,
                   he created himself on a hill that emerged from the primordial
-                  waters. His name means "the Complete One," signifying his
-                  self-existence.
+                  waters. His name means &quot;the Complete One,&quot;
+                  signifying his self-existence.
                 </p>
                 <p>
                   Atum created the first twin gods, Shu (air and breath of life)
@@ -122,10 +122,10 @@ export default function MythologyPage() {
             <div className="space-y-4 text-gray-200 leading-relaxed">
               <p>
                 Osiris (god of civilization and agriculture), a child of Geb and
-                Nut, became Egypt's first pharaoh, teaching civilization and
-                agriculture and bringing prosperity. However, his brother Set
-                (god of chaos and storms) murdered him out of jealousy and lust
-                for power.
+                Nut, became Egypt&apos;s first pharaoh, teaching civilization
+                and agriculture and bringing prosperity. However, his brother
+                Set (god of chaos and storms) murdered him out of jealousy and
+                lust for power.
               </p>
             </div>
           </div>

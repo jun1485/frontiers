@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function ERISPage() {
   return (
@@ -25,7 +24,7 @@ export default function ERISPage() {
             </h1>
           </div>
           <p className="text-xl text-gray-300">
-            Eye of Ra Intelligence Service - New Egypt's Elite Intelligence
+            Eye of Ra Intelligence Service - New Egypt&apos;s Elite Intelligence
             Agency
           </p>
         </header>
@@ -35,17 +34,18 @@ export default function ERISPage() {
             <h2 className="text-2xl font-bold text-cyan-400 mb-4">Overview</h2>
             <div className="space-y-4 text-gray-300">
               <p>
-                ERIS is New Egypt's elite spy and cyber warfare division. The
-                name "Eye of Ra" symbolizes surveillance, power, and protection,
-                perfectly aligning with the agency's covert operations while
-                maintaining strong connections to Egyptian mythology.
+                ERIS is New Egypt&apos;s elite spy and cyber warfare division.
+                The name &quot;Eye of Ra&quot; symbolizes surveillance, power,
+                and protection, perfectly aligning with the agency&apos;s covert
+                operations while maintaining strong connections to Egyptian
+                mythology.
               </p>
               <p>
                 Specializing in hacking, covert operations, and surveillance,
-                ERIS is dedicated to protecting New Egypt's interests and
+                ERIS is dedicated to protecting New Egypt&apos;s interests and
                 uncovering secrets of competing civilizations. By combining
                 cutting-edge technology with ancient wisdom, ERIS ensures New
-                Egypt's supremacy in the space race.
+                Egypt&apos;s supremacy in the space race.
               </p>
             </div>
           </div>
@@ -147,7 +147,8 @@ export default function ERISPage() {
                 </h3>
                 <p>
                   Advanced monitoring equipment and telescopes for surveillance
-                  of celestial activities and other civilizations' movements.
+                  of celestial activities and other civilizations&apos;
+                  movements.
                 </p>
               </div>
               <div className="space-y-3 text-gray-300">
