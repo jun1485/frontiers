@@ -136,35 +136,37 @@ export default function GamePage() {
 
   // 카드 드롭 핸들러
   const handleCardDrop = (cardId: string) => {
-    setHandCards((currentHand) => {
-      const usedCard = currentHand.find((card) => {
-        const isMatch = card.id === cardId;
-        return isMatch;
+    // 핸드에서 카드 찾기
+    const usedCard = handCards.find((card) => card.id === cardId);
+
+    if (!usedCard) {
+      console.log("Card not found in hand for ID:", cardId);
+      return;
+    }
+
+    if (usedCard.type === "Attack") {
+      const damage = usedCard.damage || 10;
+      setEnemy((prev) => {
+        const newHealth = Math.max(0, prev.health - damage);
+        return {
+          ...prev,
+          health: newHealth,
+        };
       });
+    }
 
-      if (!usedCard) {
-        console.log("Card not found in hand for ID:", cardId);
-        return currentHand;
-      }
+    // 핸드에서 사용된 카드 제거 - setHandCards 호출
+    setHandCards((currentHand) =>
+      currentHand.filter((card) => card.id !== cardId)
+    );
+  };
 
-      if (usedCard.type === "Attack") {
-        const damage = usedCard.damage || 10;
-        setEnemy((prev) => {
-          const newHealth = Math.max(0, prev.health - damage);
-          return {
-            ...prev,
-            health: newHealth,
-          };
-        });
-      }
+  const handleTurnEnd = () => {
+    increaseTurn();
 
-      // 카드 제거
-      const newHand = currentHand.filter((card) => card.id !== cardId);
-
-      increaseTurn();
-
-      return newHand;
-    });
+    const enemyDamage = 5;
+    dealDamage(enemyDamage);
+    console.log(`적(${enemy.name})이 ${enemyDamage}의 피해를 주었습니다!`);
   };
 
   return (
@@ -185,19 +187,27 @@ export default function GamePage() {
         {/* 하단: 플레이어 정보 및 핸드 */}
         <div className="mt-auto">
           {/* 게임 상태 표시 */}
-          <div className="mb-4 p-4 bg-gray-800 rounded">
-            <p>
-              플레이어 체력:{" "}
-              <span className="font-semibold text-green-400">
-                {playerHealth}
-              </span>
-            </p>
-            <p>
-              현재 턴:{" "}
-              <span className="font-semibold text-yellow-400">
-                {currentTurn}
-              </span>
-            </p>
+          <div className="mb-4 p-4 bg-gray-800 rounded flex justify-between items-center">
+            <div>
+              <p>
+                플레이어 체력:{" "}
+                <span className="font-semibold text-green-400">
+                  {playerHealth}
+                </span>
+              </p>
+              <p>
+                현재 턴:{" "}
+                <span className="font-semibold text-yellow-400">
+                  {currentTurn}
+                </span>
+              </p>
+            </div>
+            <button
+              onClick={handleTurnEnd}
+              className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow transition duration-300 ease-in-out"
+            >
+              턴 종료
+            </button>
           </div>
 
           {/* 플레이어 핸드 */}
