@@ -6,7 +6,6 @@ import { getCivilizationColors } from "@/utils/civilization-styles";
 import {
   CityHeader,
   CityPopulation,
-  CityInstitutions,
   CityKeyFigures,
   CityTechnologies,
   CityMilitarySystem,
@@ -37,13 +36,6 @@ const CityLayout: React.FC<CityLayoutProps> = ({ cityData }) => {
           headingColor={colors.heading}
         />
       )}
-
-      <CityInstitutions
-        institutions={cityData.mainInstitutions}
-        headingColor={colors.heading}
-        accentColor={colors.accent}
-        sectionColor={colors.section}
-      />
 
       <CityKeyFigures
         figures={cityData.keyFigures}

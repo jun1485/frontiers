@@ -1,5 +1,4 @@
 export { default as CityHeader } from "./CityHeader";
-export { default as CityInstitutions } from "./CityInstitutions";
 export { default as CityKeyFigures } from "./CityKeyFigures";
 export { default as CityTechnologies } from "./CityTechnologies";
 export { default as CityFeatures } from "./CityFeatures";

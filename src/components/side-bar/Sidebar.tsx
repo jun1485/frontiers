@@ -427,15 +427,11 @@ export default function Sidebar() {
 
   const mainSections = [
     {
-      title: "I. ERIS",
-      href: "/eris",
-    },
-    {
-      title: "II. Ancient Egyptian Mythology",
+      title: "I. Ancient Egyptian Mythology",
       href: "/mythology",
     },
     {
-      title: "III. Frontiers Universe",
+      title: "II. Frontiers Universe",
       href: "/universe",
     },
   ];
