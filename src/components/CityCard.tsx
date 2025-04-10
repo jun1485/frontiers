@@ -13,7 +13,7 @@ export default function CityCard({ city }: CityCardProps) {
     <div
       className={`max-w-6xl mx-auto rounded-lg shadow-lg p-8 border-t-4 ${colors.border.replace(
         "border",
-        "border-t"
+        "border"
       )}`}
     >
       <h1 className={`text-4xl font-bold mb-4 ${colors.heading}`}>
