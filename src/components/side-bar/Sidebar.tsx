@@ -1,156 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
+import ChapterSection from "./ChapterSection";
+import { chaptersData, mainSections } from "@/data/sidebar-data";
 
-interface SidebarLinkProps {
-  href: string;
-  children: React.ReactNode;
-  isActive?: boolean;
-}
-
-const SidebarLink = ({ href, children, isActive }: SidebarLinkProps) => (
-  <li>
-    <Link
-      href={href}
-      className={`block px-3 py-1 rounded transition-colors duration-150 ${
-        isActive
-          ? "bg-gray-700 text-yellow-300 font-medium"
-          : "hover:bg-gray-700 hover:text-yellow-300"
-      }`}
-    >
-      {children}
-    </Link>
-  </li>
-);
-
-interface SubSectionProps {
-  title: string;
-  isOpen: boolean;
-  toggleOpen: () => void;
-  items: {
-    name: string;
-    href: string;
-  }[];
-  currentPath: string;
-}
-
-const SubSection: React.FC<SubSectionProps> = ({
-  title,
-  isOpen,
-  toggleOpen,
-  items,
-  currentPath,
-}) => (
-  <div className="mb-4 ml-2">
-    <button
-      onClick={toggleOpen}
-      className="flex items-center justify-between w-full font-medium text-base text-gray-200 hover:text-cyan-300 border-b border-gray-700 pb-1 transition-colors duration-150 cursor-pointer"
-    >
-      {title}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className={`h-3 w-3 transition-transform duration-200 ${
-          isOpen ? "transform rotate-180" : ""
-        }`}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19 9l-7 7-7-7"
-        />
-      </svg>
-    </button>
-    {isOpen && (
-      <ul className="mt-2 ml-2 space-y-1 text-sm">
-        {items.map((item, idx) => (
-          <SidebarLink
-            key={idx}
-            href={item.href}
-            isActive={currentPath === item.href}
-          >
-            {item.name}
-          </SidebarLink>
-        ))}
-      </ul>
-    )}
-  </div>
-);
-
-interface ChapterSectionProps {
-  title: string;
-  isOpen: boolean;
-  toggleOpen: () => void;
-  subSections: {
-    title: string;
-    key: string;
-    items: {
-      name: string;
-      href: string;
-    }[];
-  }[];
-  openSubSections: { [key: string]: boolean };
-  toggleSubSection: (section: string) => void;
-  currentPath: string;
-}
-
-const ChapterSection: React.FC<ChapterSectionProps> = ({
-  title,
-  isOpen,
-  toggleOpen,
-  subSections,
-  openSubSections,
-  toggleSubSection,
-  currentPath,
-}) => (
-  <div className="mb-4">
-    <button
-      onClick={toggleOpen}
-      className="flex items-center justify-between w-full font-semibold text-lg text-cyan-400 hover:text-cyan-300 border-b border-cyan-800 pb-1 transition-colors duration-150 cursor-pointer"
-    >
-      {title}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className={`h-4 w-4 transition-transform duration-200 ${
-          isOpen ? "transform rotate-180" : ""
-        }`}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19 9l-7 7-7-7"
-        />
-      </svg>
-    </button>
-    {isOpen && (
-      <div className="mt-2 ml-2">
-        {subSections.map((subSection, idx) => (
-          <SubSection
-            key={idx}
-            title={subSection.title}
-            isOpen={openSubSections[subSection.key] || false}
-            toggleOpen={() => toggleSubSection(subSection.key)}
-            items={subSection.items}
-            currentPath={currentPath}
-          />
-        ))}
-      </div>
-    )}
-  </div>
-);
-
+// 사이드바 컴포넌트
 export default function Sidebar() {
   const router = useRouter();
   const pathname = usePathname();
+
+  // 상태 관리
   const [openChapters, setOpenChapters] = useState<{ [key: string]: boolean }>({
     egypt: false,
     rome: false,
@@ -161,6 +22,7 @@ export default function Sidebar() {
     [key: string]: boolean;
   }>({});
 
+  // 챕터 토글 기능
   const toggleChapter = (chapter: string) => {
     setOpenChapters((prev) => ({
       ...prev,
@@ -168,6 +30,7 @@ export default function Sidebar() {
     }));
   };
 
+  // 서브섹션 토글 기능
   const toggleSubSection = (section: string) => {
     setOpenSubSections((prev) => ({
       ...prev,
@@ -175,269 +38,8 @@ export default function Sidebar() {
     }));
   };
 
-  // 각 문명의 도시 데이터
-  const civilizationCities = {
-    egypt: [
-      { name: "Cairo", href: "/civilizations/egypt/cities/cairo" },
-      { name: "Alexandria", href: "/civilizations/egypt/cities/alexandria" },
-      { name: "Luxor", href: "/civilizations/egypt/cities/luxor" },
-      { name: "Memphis", href: "/civilizations/egypt/cities/memphis" },
-      { name: "Thebes", href: "/civilizations/egypt/cities/thebes" },
-      { name: "Giza", href: "/civilizations/egypt/cities/giza" },
-      { name: "Heliopolis", href: "/civilizations/egypt/cities/heliopolis" },
-      { name: "Aswan", href: "/civilizations/egypt/cities/aswan" },
-    ],
-    rome: [
-      { name: "Rome", href: "/civilizations/rome/cities/rome" },
-      { name: "Milan", href: "/civilizations/rome/cities/milan" },
-      { name: "Naples", href: "/civilizations/rome/cities/naples" },
-      { name: "Portuna", href: "/civilizations/rome/cities/portuna" },
-    ],
-    sparta: [
-      { name: "Sparta", href: "/civilizations/sparta/cities/sparta" },
-      { name: "Athens", href: "/civilizations/sparta/cities/athens" },
-      { name: "Corinth", href: "/civilizations/sparta/cities/corinth" },
-      { name: "Pamisos", href: "/civilizations/sparta/cities/pamisos" },
-    ],
-  };
-
-  // 문명 서브메뉴 구조
-  const chaptersData = [
-    {
-      title: "New Egypt",
-      key: "egypt",
-      subSections: [
-        {
-          title: "Population Information",
-          key: "egypt-population",
-          items: [
-            {
-              name: "Population Composition",
-              href: "/civilizations/egypt/population",
-            },
-          ],
-        },
-        {
-          title: "Major Institutions",
-          key: "egypt-institutions",
-          items: [
-            { name: "ERIS", href: "/civilizations/egypt/institutions/eris" },
-            {
-              name: "Government Institutions",
-              href: "/civilizations/egypt/institutions/government",
-            },
-          ],
-        },
-        {
-          title: "Key Figures",
-          key: "egypt-figures",
-          items: [
-            {
-              name: "Political Leaders",
-              href: "/civilizations/egypt/figures/leaders",
-            },
-            {
-              name: "ERIS Agents",
-              href: "/civilizations/egypt/figures/agents",
-            },
-          ],
-        },
-        {
-          title: "Core Technologies",
-          key: "egypt-technologies",
-          items: [
-            {
-              name: "Cyber Technologies",
-              href: "/civilizations/egypt/technologies/cyber",
-            },
-            {
-              name: "Space Technologies",
-              href: "/civilizations/egypt/technologies/space",
-            },
-          ],
-        },
-        {
-          title: "Military System",
-          key: "egypt-military",
-          items: [
-            {
-              name: "Military Organization",
-              href: "/civilizations/egypt/military/organization",
-            },
-          ],
-        },
-        {
-          title: "Cities",
-          key: "egypt-cities",
-          items: civilizationCities.egypt,
-        },
-      ],
-    },
-    {
-      title: "Roman Empire",
-      key: "rome",
-      subSections: [
-        {
-          title: "Population Information",
-          key: "rome-population",
-          items: [
-            {
-              name: "Population Composition",
-              href: "/civilizations/rome/population",
-            },
-          ],
-        },
-        {
-          title: "Major Institutions",
-          key: "rome-institutions",
-          items: [
-            {
-              name: "Central Intelligence Bureau",
-              href: "/civilizations/rome/institutions/cib",
-            },
-            {
-              name: "Government Institutions",
-              href: "/civilizations/rome/institutions/government",
-            },
-          ],
-        },
-        {
-          title: "Key Figures",
-          key: "rome-figures",
-          items: [
-            {
-              name: "Political Leaders",
-              href: "/civilizations/rome/figures/leaders",
-            },
-            {
-              name: "Intelligence Agents",
-              href: "/civilizations/rome/figures/agents",
-            },
-          ],
-        },
-        {
-          title: "Core Technologies",
-          key: "rome-technologies",
-          items: [
-            {
-              name: "Brain Manipulation",
-              href: "/civilizations/rome/technologies/brain",
-            },
-            {
-              name: "Intelligence Operations",
-              href: "/civilizations/rome/technologies/intel",
-            },
-          ],
-        },
-        {
-          title: "Military System",
-          key: "rome-military",
-          items: [
-            {
-              name: "Military Organization",
-              href: "/civilizations/rome/military/organization",
-            },
-          ],
-        },
-        {
-          title: "Cities",
-          key: "rome-cities",
-          items: civilizationCities.rome,
-        },
-      ],
-    },
-    {
-      title: "Spartan Society",
-      key: "sparta",
-      subSections: [
-        {
-          title: "Population Information",
-          key: "sparta-population",
-          items: [
-            {
-              name: "Population Composition",
-              href: "/civilizations/sparta/population",
-            },
-          ],
-        },
-        {
-          title: "Major Institutions",
-          key: "sparta-institutions",
-          items: [
-            {
-              name: "The Gerousia",
-              href: "/civilizations/sparta/institutions/gerousia",
-            },
-            {
-              name: "Crypteia Command",
-              href: "/civilizations/sparta/institutions/crypteia",
-            },
-          ],
-        },
-        {
-          title: "Key Figures",
-          key: "sparta-figures",
-          items: [
-            {
-              name: "Queen Gorgo",
-              href: "/civilizations/sparta/figures/gorgo",
-            },
-            {
-              name: "General Leonidas",
-              href: "/civilizations/sparta/figures/leonidas",
-            },
-          ],
-        },
-        {
-          title: "Core Technologies",
-          key: "sparta-technologies",
-          items: [
-            {
-              name: "Military Training Systems",
-              href: "/civilizations/sparta/technologies/military",
-            },
-            {
-              name: "Surveillance Systems",
-              href: "/civilizations/sparta/technologies/surveillance",
-            },
-          ],
-        },
-        {
-          title: "Military System",
-          key: "sparta-military",
-          items: [
-            {
-              name: "Crypteia",
-              href: "/civilizations/sparta/military/crypteia",
-            },
-            {
-              name: "Military Organization",
-              href: "/civilizations/sparta/military/organization",
-            },
-          ],
-        },
-        {
-          title: "Cities",
-          key: "sparta-cities",
-          items: civilizationCities.sparta,
-        },
-      ],
-    },
-  ];
-
-  const mainSections = [
-    {
-      title: "I. Ancient Egyptian Mythology",
-      href: "/mythology",
-    },
-    {
-      title: "II. Frontiers Universe",
-      href: "/universe",
-    },
-  ];
-
-  // 현재 경로에 따라 관련 메뉴 섹션 자동 오픈
-  React.useEffect(() => {
+  // 현재 경로에 따라 관련 메뉴 자동 오픈
+  useEffect(() => {
     if (pathname) {
       // 문명 자동 확장
       if (pathname.includes("/civilizations/egypt")) {
@@ -492,6 +94,7 @@ export default function Sidebar() {
         </svg>
         Frontiers Wiki
       </h1>
+
       <nav className="space-y-3 mb-6">
         {mainSections.map((section, index) => (
           <div key={index}>
@@ -499,7 +102,7 @@ export default function Sidebar() {
               href={section.href}
               className={`font-semibold text-lg block border-b pb-1 transition-colors duration-150 ${
                 pathname === section.href
-                  ? "text-yellow-300 border-yellow-800"
+                  ? "text-purple-400 border-cyan-800"
                   : "text-cyan-400 hover:text-cyan-300 border-cyan-800"
               }`}
             >
@@ -510,7 +113,7 @@ export default function Sidebar() {
       </nav>
 
       <div className="mt-6">
-        <h2 className="text-xl font-bold text-yellow-400 mb-4">
+        <h2 className="text-xl font-bold text-purple-400 mb-4">
           Civilizations
         </h2>
 
