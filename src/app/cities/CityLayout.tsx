@@ -63,10 +63,7 @@ const CityLayout: React.FC<CityLayoutProps> = ({ cityData }) => {
         />
       )}
 
-      <CityFeatures
-        features={cityData.cityFeatures}
-        headingColor={colors.heading}
-      />
+      <CityFeatures features={cityData.cityFeatures} />
 
       <HomeButton buttonColor={colors.button} />
     </div>

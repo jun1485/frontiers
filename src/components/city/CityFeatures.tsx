@@ -2,14 +2,10 @@ import React from "react";
 
 interface CityFeaturesProps {
   features: string[];
-  headingColor: string;
 }
 
 // 도시 특징 섹션 컴포넌트
-const CityFeatures: React.FC<CityFeaturesProps> = ({
-  features,
-  headingColor,
-}) => {
+const CityFeatures: React.FC<CityFeaturesProps> = ({ features }) => {
   if (!features || features.length === 0) return null;
 
   return (
