@@ -68,7 +68,7 @@ export default function Sidebar() {
     <aside className="w-72 bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 p-6 fixed h-full overflow-y-auto shadow-lg border-r border-gray-700">
       <h1
         onClick={() => router.push("/")}
-        className="text-2xl font-bold mb-8 text-yellow-400 tracking-tight flex items-center cursor-pointer"
+        className="text-2xl font-bold mb-8 text-purple-400 tracking-tight flex items-center cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -113,9 +113,7 @@ export default function Sidebar() {
       </nav>
 
       <div className="mt-6">
-        <h2 className="text-xl font-bold text-purple-400 mb-4">
-          Civilizations
-        </h2>
+        <h2 className="text-xl font-bold mb-4">Civilizations</h2>
 
         {chaptersData.map((chapter, idx) => (
           <ChapterSection

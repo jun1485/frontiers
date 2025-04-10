@@ -15,8 +15,8 @@ const SidebarLink = ({ href, children, isActive }: SidebarLinkProps) => (
       href={href}
       className={`block px-3 py-1 rounded transition-colors duration-150 ${
         isActive
-          ? "bg-gray-700 text-purple-400 font-medium"
-          : "hover:bg-gray-700 hover:text-purple-400"
+          ? "bg-gray-700 text-yellow-400 font-medium"
+          : "hover:bg-gray-700 hover:text-yellow-400"
       }`}
     >
       {children}
