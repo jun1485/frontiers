@@ -1,10 +1,17 @@
 import React from "react";
 import Link from "next/link";
+import { TableOfContents } from "@/components/side-bar";
 
 export default function UniversePage() {
+  const contentsItems = [
+    { id: "fu-origin", title: "Origin Event" },
+    { id: "fu-civs", title: "Major Civilizations" },
+    { id: "fu-society", title: "Society/Environment" },
+    { id: "fu-plot", title: "Plot Elements" },
+  ];
+
   return (
     <>
-      {/* 페이지 헤더 */}
       <header className="mb-10">
         <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400 tracking-tight">
           Frontiers Universe
@@ -14,7 +21,8 @@ export default function UniversePage() {
         </p>
       </header>
 
-      {/* 기원 사건 섹션 */}
+      <TableOfContents items={contentsItems} />
+
       <section id="fu-origin" className="mb-12">
         <div className="bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700">
           <div className="bg-gradient-to-r from-purple-900 to-gray-800 px-6 py-4 border-b border-gray-700">
@@ -61,7 +69,6 @@ export default function UniversePage() {
         </div>
       </section>
 
-      {/* 주요 문명 섹션 */}
       <section id="fu-civs" className="mb-12">
         <div className="bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700">
           <div className="bg-gradient-to-r from-purple-900 to-gray-800 px-6 py-4 border-b border-gray-700">
@@ -85,7 +92,6 @@ export default function UniversePage() {
           </div>
           <div className="p-6">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* 새로운 이집트 */}
               <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-600 hover:shadow-lg hover:scale-[1.01] transition-all duration-200">
                 <div className="bg-cyan-900 p-3">
                   <h3 className="text-xl font-semibold text-cyan-300">
@@ -110,7 +116,6 @@ export default function UniversePage() {
                 </div>
               </div>
 
-              {/* 로마 제국 */}
               <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-600 hover:shadow-lg hover:scale-[1.01] transition-all duration-200">
                 <div className="bg-red-900 p-3">
                   <h3 className="text-xl font-semibold text-red-300">
@@ -135,7 +140,6 @@ export default function UniversePage() {
                 </div>
               </div>
 
-              {/* 스파르타 사회 */}
               <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-600 hover:shadow-lg hover:scale-[1.01] transition-all duration-200">
                 <div className="bg-blue-900 p-3">
                   <h3 className="text-xl font-semibold text-blue-300">
@@ -163,7 +167,6 @@ export default function UniversePage() {
         </div>
       </section>
 
-      {/* 사회 및 환경 섹션 */}
       <section id="fu-society" className="mb-12">
         <div className="bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700">
           <div className="bg-gradient-to-r from-purple-900 to-gray-800 px-6 py-4 border-b border-gray-700">
@@ -187,7 +190,6 @@ export default function UniversePage() {
           </div>
           <div className="p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* 도시 특징 */}
               <div className="bg-gray-700 p-5 rounded-lg">
                 <h3 className="text-xl font-semibold mb-3 text-purple-300">
                   Urban Features
@@ -204,7 +206,6 @@ export default function UniversePage() {
                 </ul>
               </div>
 
-              {/* 종교적 환경 */}
               <div className="bg-gray-700 p-5 rounded-lg">
                 <h3 className="text-xl font-semibold mb-3 text-purple-300">
                   Religious Environment
@@ -238,7 +239,6 @@ export default function UniversePage() {
         </div>
       </section>
 
-      {/* 주요 줄거리 요소 섹션 */}
       <section id="fu-plot" className="mb-12">
         <div className="bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700">
           <div className="bg-gradient-to-r from-purple-900 to-gray-800 px-6 py-4 border-b border-gray-700">

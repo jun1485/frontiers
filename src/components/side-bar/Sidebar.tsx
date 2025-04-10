@@ -4,8 +4,63 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+interface SidebarLinkProps {
+  href: string;
+  children: React.ReactNode;
+}
+
+const SidebarLink = ({ href, children }: SidebarLinkProps) => (
+  <li>
+    <Link
+      href={href}
+      className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
+    >
+      {children}
+    </Link>
+  </li>
+);
+
+interface SidebarSectionProps {
+  title: string;
+  links: {
+    href: string;
+    text: string;
+  }[];
+}
+
+const SidebarSection = ({ title, links }: SidebarSectionProps) => (
+  <div>
+    <h2 className="font-semibold text-lg mb-3 text-cyan-400 border-b border-cyan-800 pb-1">
+      {title}
+    </h2>
+    <ul className="space-y-2 text-sm ml-2">
+      {links.map((link, index) => (
+        <SidebarLink key={index} href={link.href}>
+          {link.text}
+        </SidebarLink>
+      ))}
+    </ul>
+  </div>
+);
+
 export default function Sidebar() {
   const router = useRouter();
+
+  const mainSections = [
+    {
+      title: "I. ERIS",
+      href: "/eris",
+    },
+    {
+      title: "II. Ancient Egyptian Mythology",
+      href: "/mythology",
+    },
+    {
+      title: "III. Frontiers Universe",
+      href: "/universe",
+    },
+  ];
+
   return (
     <aside className="w-72 bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 p-6 fixed h-full overflow-y-auto shadow-lg border-r border-gray-700">
       <h1
@@ -36,117 +91,17 @@ export default function Sidebar() {
         </svg>
         Frontiers Wiki
       </h1>
-      <nav className="space-y-6">
-        <div>
-          <h2 className="font-semibold text-lg mb-3 text-cyan-400 border-b border-cyan-800 pb-1">
-            I. ERIS
-          </h2>
-          <ul className="space-y-2 text-sm ml-2">
-            <li>
-              <Link
-                href="/eris"
-                className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
-              >
-                1. Overview
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/eris#headquarters"
-                className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
-              >
-                2. Headquarters Design
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/eris#special-features"
-                className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
-              >
-                3. Special Features
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/eris#divisions"
-                className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
-              >
-                4. Divisions
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h2 className="font-semibold text-lg mb-3 text-cyan-400 border-b border-cyan-800 pb-1">
-            II. Ancient Egyptian Mythology
-          </h2>
-          <ul className="space-y-2 text-sm ml-2">
-            <li>
-              <Link
-                href="/mythology"
-                className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
-              >
-                1. Creation Myth
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/mythology#myth-conflicts"
-                className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
-              >
-                2. Major Conflicts
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/mythology#myth-meaning"
-                className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
-              >
-                3. Meaning
-              </Link>
-            </li>
-          </ul>
-        </div>
-        {/* Frontiers Universe 섹션 */}
-        <div>
-          <h2 className="font-semibold text-lg mb-3 text-cyan-400 border-b border-cyan-800 pb-1">
-            III. Frontiers Universe
-          </h2>
-          <ul className="space-y-2 text-sm ml-2">
-            <li>
-              <Link
-                href="/universe"
-                className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
-              >
-                1. Origin Event
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/universe#fu-civs"
-                className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
-              >
-                2. Major Civilizations
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/universe#fu-society"
-                className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
-              >
-                3. Society/Environment
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/universe#fu-plot"
-                className="block px-3 py-1 rounded hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-150"
-              >
-                4. Plot Elements
-              </Link>
-            </li>
-          </ul>
-        </div>
+      <nav className="space-y-3">
+        {mainSections.map((section, index) => (
+          <div key={index}>
+            <Link
+              href={section.href}
+              className="font-semibold text-lg text-cyan-400 hover:text-cyan-300 block border-b border-cyan-800 pb-1 transition-colors duration-150"
+            >
+              {section.title}
+            </Link>
+          </div>
+        ))}
       </nav>
     </aside>
   );

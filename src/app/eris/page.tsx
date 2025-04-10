@@ -1,24 +1,20 @@
 import React from "react";
 import Link from "next/link";
+import { TableOfContents } from "@/components/side-bar";
 
 export default function ERISPage() {
+  const contentsItems = [
+    { id: "overview", title: "Overview" },
+    { id: "headquarters", title: "Headquarters Design" },
+    { id: "special-features", title: "Special Features" },
+    { id: "divisions", title: "Divisions" },
+  ];
+
   return (
     <div className="relative min-h-screen">
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-8">
         <header className="mb-10">
           <div className="flex items-center mb-4">
-            <svg
-              className="h-8 w-8 text-cyan-400 mr-3"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M2 12C2 12 5.63636 7 12 7C18.3636 7 22 12 22 12C22 12 18.3636 17 12 17C5.63636 17 2 12 2 12Z" />
-              <circle cx="12" cy="12" r="3" />
-            </svg>
             <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 tracking-tight">
               ERIS
             </h1>
@@ -28,6 +24,8 @@ export default function ERISPage() {
             Agency
           </p>
         </header>
+
+        <TableOfContents items={contentsItems} />
 
         <section id="overview" className="mb-12">
           <div className="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">

@@ -27,7 +27,7 @@ export default function Home() {
           <div className="bg-gradient-to-br from-cyan-900 to-gray-800 rounded-xl p-6 shadow-xl border border-cyan-800/30 hover:border-cyan-600/50 transition-all duration-300 h-full">
             <div className="flex items-center mb-4">
               <svg
-                className="h-6 w-6 text-cyan-400 mr-2"
+                className="h-6 w-6 text-cyan-400 mr-2 shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -58,7 +58,7 @@ export default function Home() {
           <div className="bg-gradient-to-br from-amber-900 to-gray-800 rounded-xl p-6 shadow-xl border border-amber-800/30 hover:border-amber-600/50 transition-all duration-300 h-full">
             <div className="flex items-center mb-4">
               <svg
-                className="h-6 w-6 text-amber-400 mr-2"
+                className="h-6 w-6 text-amber-400 mr-2 shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -89,7 +89,7 @@ export default function Home() {
           <div className="bg-gradient-to-br from-purple-900 to-gray-800 rounded-xl p-6 shadow-xl border border-purple-800/30 hover:border-purple-600/50 transition-all duration-300 h-full">
             <div className="flex items-center mb-4">
               <svg
-                className="h-6 w-6 text-purple-400 mr-2"
+                className="h-6 w-6 text-purple-400 mr-2 shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
