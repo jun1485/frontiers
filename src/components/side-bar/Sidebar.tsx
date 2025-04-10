@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -20,31 +20,96 @@ const SidebarLink = ({ href, children }: SidebarLinkProps) => (
   </li>
 );
 
-interface SidebarSectionProps {
+interface CitySectionProps {
   title: string;
-  links: {
+  isOpen: boolean;
+  toggleOpen: () => void;
+  cities: {
+    name: string;
     href: string;
-    text: string;
   }[];
 }
 
-const SidebarSection = ({ title, links }: SidebarSectionProps) => (
-  <div>
-    <h2 className="font-semibold text-lg mb-3 text-cyan-400 border-b border-cyan-800 pb-1">
+const CitySection: React.FC<CitySectionProps> = ({
+  title,
+  isOpen,
+  toggleOpen,
+  cities,
+}) => (
+  <div className="mb-4">
+    <button
+      onClick={toggleOpen}
+      className="flex items-center justify-between w-full font-semibold text-lg text-cyan-400 hover:text-cyan-300 border-b border-cyan-800 pb-1 transition-colors duration-150 cursor-pointer"
+    >
       {title}
-    </h2>
-    <ul className="space-y-2 text-sm ml-2">
-      {links.map((link, index) => (
-        <SidebarLink key={index} href={link.href}>
-          {link.text}
-        </SidebarLink>
-      ))}
-    </ul>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className={`h-4 w-4 transition-transform duration-200 ${
+          isOpen ? "transform rotate-180" : ""
+        }`}
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>
+    </button>
+    {isOpen && (
+      <ul className="mt-2 ml-2 space-y-1 text-sm">
+        {cities.map((city, idx) => (
+          <SidebarLink key={idx} href={city.href}>
+            {city.name}
+          </SidebarLink>
+        ))}
+      </ul>
+    )}
   </div>
 );
 
 export default function Sidebar() {
   const router = useRouter();
+  const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
+    egypt: false,
+    rome: false,
+    sparta: false,
+  });
+
+  const toggleSection = (section: string) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+
+  const civilizationCities = {
+    egypt: [
+      { name: "Cairo", href: "/cities/cairo" },
+      { name: "Alexandria", href: "/cities/alexandria" },
+      { name: "Luxor", href: "/cities/luxor" },
+      { name: "Memphis", href: "/cities/memphis" },
+      { name: "Thebes", href: "/cities/thebes" },
+      { name: "Giza", href: "/cities/giza" },
+      { name: "Heliopolis", href: "/cities/heliopolis" },
+      { name: "Aswan", href: "/cities/aswan" },
+    ],
+    rome: [
+      { name: "Rome", href: "/cities/rome" },
+      { name: "Milan", href: "/cities/milan" },
+      { name: "Naples", href: "/cities/naples" },
+      { name: "Portuna", href: "/cities/portuna" },
+    ],
+    sparta: [
+      { name: "Sparta", href: "/cities/sparta" },
+      { name: "Athens", href: "/cities/athens" },
+      { name: "Corinth", href: "/cities/corinth" },
+      { name: "Pamisos", href: "/cities/pamisos" },
+    ],
+  };
 
   const mainSections = [
     {
@@ -91,7 +156,7 @@ export default function Sidebar() {
         </svg>
         Frontiers Wiki
       </h1>
-      <nav className="space-y-3">
+      <nav className="space-y-3 mb-6">
         {mainSections.map((section, index) => (
           <div key={index}>
             <Link
@@ -103,6 +168,32 @@ export default function Sidebar() {
           </div>
         ))}
       </nav>
+      <div className="mt-6">
+        <h2 className="text-xl font-bold text-yellow-400 mb-4">
+          Civilizations & Cities
+        </h2>
+
+        <CitySection
+          title="New Egypt"
+          isOpen={openSections.egypt}
+          toggleOpen={() => toggleSection("egypt")}
+          cities={civilizationCities.egypt}
+        />
+
+        <CitySection
+          title="Roman Empire"
+          isOpen={openSections.rome}
+          toggleOpen={() => toggleSection("rome")}
+          cities={civilizationCities.rome}
+        />
+
+        <CitySection
+          title="Spartan Society"
+          isOpen={openSections.sparta}
+          toggleOpen={() => toggleSection("sparta")}
+          cities={civilizationCities.sparta}
+        />
+      </div>
     </aside>
   );
 }
