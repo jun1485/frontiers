@@ -1,4 +1,3 @@
-import { CityData } from "@/types/city";
 import { spartanCities } from "../cities";
 import CityCard from "@/components/CityCard";
 

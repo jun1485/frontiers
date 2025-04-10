@@ -1,6 +1,6 @@
 import React from "react";
 
-// 신 이집트 ERIS 요원 페이지
+// 신 이집트 ERIS 페이지
 export default function EgyptAgentsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
@@ -14,10 +14,10 @@ export default function EgyptAgentsPage() {
           <div className="bg-gray-700 p-4 rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Commander Osiris</h3>
             <p className="text-gray-300">
-              Commander of the 'Amun's Dream' Mars exploration mission.
-              Experiencing personal conflicts between family (relationship with
-              daughter Bastet) and mission duties, while maintaining mission
-              security against Roman interference.
+              Commander of the &apos;Amun&apos;s Dream&apos; Mars exploration
+              mission. Experiencing personal conflicts between family
+              (relationship with daughter Bastet) and mission duties, while
+              maintaining mission security against Roman interference.
             </p>
           </div>
           <div className="bg-gray-700 p-4 rounded-lg">
