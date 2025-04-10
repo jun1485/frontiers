@@ -20,7 +20,6 @@ interface CityLayoutProps {
 
 // 도시 페이지 레이아웃 컴포넌트
 const CityLayout: React.FC<CityLayoutProps> = ({ cityData }) => {
-  // 문명에 따른 컬러 스키마 설정
   const colors = getCivilizationColors(cityData.civilizationName);
 
   return (

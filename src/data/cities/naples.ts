@@ -3,7 +3,7 @@ import { CityData } from "@/types/city";
 // 나폴리 도시 데이터
 export const naplesData: CityData = {
   name: "Naples",
-  civilizationName: "Republic of Neapolis",
+  civilizationName: "Roman Empire",
   description:
     "Vibrant port city and cultural center of the Mediterranean, known for its artisan districts, rich academic tradition, and democratic governance.",
   population: "3,200,000",

@@ -23,7 +23,8 @@ const notoSansKr = Noto_Sans_KR({
 
 export const metadata: Metadata = {
   title: "Frontiers Universe Wiki",
-  description: "고대 문명의 미래적 재해석, Frontiers Universe의 세계관",
+  description:
+    "Futuristic reinterpretation of ancient civilizations, the worldview of Frontiers Universe",
 };
 
 export default function RootLayout({
@@ -32,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="en">
       <body
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} ${notoSansKr.variable} antialiased bg-gray-900 text-gray-100 font-[family-name:var(--font-noto-sans-kr),var(--font-geist-sans)]`}

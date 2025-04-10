@@ -6,7 +6,6 @@ export const getCivilizationColors = (
 ): CivilizationStyle => {
   switch (civilization) {
     case "New Egypt":
-    case "뉴이집트":
       return {
         primary: "from-cyan-400 to-blue-400",
         heading: "text-cyan-400",
@@ -17,7 +16,6 @@ export const getCivilizationColors = (
         hover: "hover:text-cyan-300",
       };
     case "Roman Empire":
-    case "로마 제국":
       return {
         primary: "from-red-400 to-rose-500",
         heading: "text-red-400",
@@ -28,7 +26,6 @@ export const getCivilizationColors = (
         hover: "hover:text-red-300",
       };
     case "Spartan Society":
-    case "스파르타 사회":
       return {
         primary: "from-blue-400 to-indigo-500",
         heading: "text-blue-400",

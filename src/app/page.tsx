@@ -1,5 +1,6 @@
 import React from "react";
-import Link from "next/link";
+import { LinkCard, InfoCard } from "@/components/cards";
+import { EyeIcon } from "@/components/icons";
 
 export default function Home() {
   return (
@@ -23,98 +24,81 @@ export default function Home() {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <Link href="/eris" className="group">
-          <div className="bg-gradient-to-br from-cyan-900 to-gray-800 rounded-xl p-6 shadow-xl border border-cyan-800/30 hover:border-cyan-600/50 transition-all duration-300 h-full">
-            <div className="flex items-center mb-4">
-              <svg
-                className="h-6 w-6 text-cyan-400 mr-2 shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M2 12C2 12 5.63636 7 12 7C18.3636 7 22 12 22 12C22 12 18.3636 17 12 17C5.63636 17 2 12 2 12Z"
-                />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-              <h2 className="text-2xl font-bold text-cyan-400">ERIS</h2>
-            </div>
-            <p className="text-gray-300 mb-4">
-              Eye of Ra Intelligence Service - New Egypt&apos;s elite spy and
-              cyber warfare division
-            </p>
-            <ul className="text-gray-400 space-y-2 text-sm">
-              <li>• Advanced surveillance systems</li>
-              <li>• Cyber operations & signal intelligence</li>
-              <li>• Covert missions & espionage</li>
-            </ul>
-          </div>
-        </Link>
+        <LinkCard
+          href="/eris"
+          title="ERIS"
+          description="Eye of Ra Intelligence Service - New Egypt's elite spy and cyber warfare division"
+          icon={<EyeIcon />}
+          items={[
+            "Advanced surveillance systems",
+            "Cyber operations & signal intelligence",
+            "Covert missions & espionage",
+          ]}
+          bgColor="bg-gradient-to-br from-cyan-900 to-gray-800"
+          borderColor="border-cyan-800/30"
+          hoverBorderColor="border-cyan-600/50"
+          titleColor="text-cyan-400"
+        />
 
-        <Link href="/mythology" className="group">
-          <div className="bg-gradient-to-br from-amber-900 to-gray-800 rounded-xl p-6 shadow-xl border border-amber-800/30 hover:border-amber-600/50 transition-all duration-300 h-full">
-            <div className="flex items-center mb-4">
-              <svg
-                className="h-6 w-6 text-amber-400 mr-2 shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                />
-              </svg>
-              <h2 className="text-2xl font-bold text-amber-400">
-                Ancient Egyptian Mythology
-              </h2>
-            </div>
-            <p className="text-gray-300 mb-4">
-              The mythological foundation that shapes the Frontiers World
-            </p>
-            <ul className="text-gray-400 space-y-2 text-sm">
-              <li>• Creation myths and early gods</li>
-              <li>• Divine conflicts and roles</li>
-              <li>• Modern interpretations</li>
-            </ul>
-          </div>
-        </Link>
+        <LinkCard
+          href="/mythology"
+          title="Ancient Egyptian Mythology"
+          description="The mythological foundation that shapes the Frontiers World"
+          icon={
+            <svg
+              className="h-6 w-6 text-amber-400 mr-2 shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+              />
+            </svg>
+          }
+          items={[
+            "Creation myths and early gods",
+            "Divine conflicts and roles",
+            "Modern interpretations",
+          ]}
+          bgColor="bg-gradient-to-br from-amber-900 to-gray-800"
+          borderColor="border-amber-800/30"
+          hoverBorderColor="border-amber-600/50"
+          titleColor="text-amber-400"
+        />
 
-        <Link href="/universe" className="group">
-          <div className="bg-gradient-to-br from-purple-900 to-gray-800 rounded-xl p-6 shadow-xl border border-purple-800/30 hover:border-purple-600/50 transition-all duration-300 h-full">
-            <div className="flex items-center mb-4">
-              <svg
-                className="h-6 w-6 text-purple-400 mr-2 shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                />
-              </svg>
-              <h2 className="text-2xl font-bold text-purple-400">
-                Frontiers Universe
-              </h2>
-            </div>
-            <p className="text-gray-300 mb-4">
-              A world where ancient civilizations embrace futuristic technology
-            </p>
-            <ul className="text-gray-400 space-y-2 text-sm">
-              <li>• Major civilizations</li>
-              <li>• Society and environment</li>
-              <li>• Space exploration</li>
-            </ul>
-          </div>
-        </Link>
+        <LinkCard
+          href="/universe"
+          title="Frontiers Universe"
+          description="A world where ancient civilizations embrace futuristic technology"
+          icon={
+            <svg
+              className="h-6 w-6 text-purple-400 mr-2 shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+          }
+          items={[
+            "Major civilizations",
+            "Society and environment",
+            "Space exploration",
+          ]}
+          bgColor="bg-gradient-to-br from-purple-900 to-gray-800"
+          borderColor="border-purple-800/30"
+          hoverBorderColor="border-purple-600/50"
+          titleColor="text-purple-400"
+        />
       </div>
 
       {/* Featured Section */}
@@ -138,28 +122,29 @@ export default function Home() {
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
-          <h3 className="text-xl font-semibold text-cyan-400 mb-4">
-            Major Locations
-          </h3>
-          <ul className="space-y-2 text-gray-300">
-            <li>• Nile River Region - New Egypt&apos;s core territory</li>
-            <li>• Krypteia Forest - Spartan military training grounds</li>
-            <li>• Lunar Base - Space exploration outpost</li>
-            <li>• Mars Colony - &quot;Amun&apos;s Dream&quot; project site</li>
-          </ul>
-        </div>
-        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
-          <h3 className="text-xl font-semibold text-purple-400 mb-4">
-            Key Themes
-          </h3>
-          <ul className="space-y-2 text-gray-300">
-            <li>• Technological advancement vs. environmental decline</li>
-            <li>• Political and moral conflicts</li>
-            <li>• Space exploration as escape and opportunity</li>
-            <li>• Balance between tradition and progress</li>
-          </ul>
-        </div>
+        <InfoCard
+          title="Major Locations"
+          description="Key locations in the Frontiers world"
+          items={[
+            "Nile River Region - New Egypt's core territory",
+            "Krypteia Forest - Spartan military training grounds",
+            "Lunar Base - Space exploration outpost",
+            'Mars Colony - "Amun\'s Dream" project site',
+          ]}
+          titleColor="text-cyan-400"
+        />
+
+        <InfoCard
+          title="Key Themes"
+          description="Main themes of the Frontiers universe"
+          items={[
+            "Technological advancement vs. environmental decline",
+            "Political and moral conflicts",
+            "Space exploration as escape and opportunity",
+            "Balance between tradition and progress",
+          ]}
+          titleColor="text-purple-400"
+        />
       </section>
     </>
   );
