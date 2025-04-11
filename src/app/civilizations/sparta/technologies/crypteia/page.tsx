@@ -1,10 +1,10 @@
 import React from "react";
 
 // 스파르타 사회 크립테이아 기술 페이지
-export default function SpartaCrypteiaTechPage() {
+export default function SpartaKrypteiaTechPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Crypteia Technologies</h1>
+      <h1 className="text-3xl font-bold mb-6">Krypteia Technologies</h1>
       <div className="bg-gray-800 rounded-lg p-6">
         <h2 className="text-2xl font-semibold mb-4">Key Technologies</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

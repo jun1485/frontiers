@@ -83,7 +83,7 @@ export default function CitiesIndexPage() {
         {
           name: "Pamisos",
           href: "/cities/pamisos",
-          info: "Crypteia Military Training",
+          info: "Krypteia Military Training",
         },
       ],
     },

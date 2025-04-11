@@ -5,10 +5,10 @@ export const pamisosData: CityData = {
   name: "Pamisos",
   civilizationName: "Spartan Society",
   description:
-    "A military training region of the Spartan Society, serving as a borderland where the Crypteia ritual takes place.",
+    "A military training region of the Spartan Society, serving as a borderland where the Krypteia ritual takes place.",
   mainInstitutions: [
     {
-      name: "Crypteia Training Center",
+      name: "Krypteia Training Center",
       description:
         "The institution conducting military training rituals for Spartan warriors, where criminal hunting programs are livestreamed.",
     },
@@ -40,7 +40,7 @@ export const pamisosData: CityData = {
     },
   ],
   militarySystem:
-    "Crypteia: A military training ritual for Spartan warriors in the borderland of Pamisos, where hunting criminals is often livestreamed. This serves to strengthen Spartan dominance and maintain security.",
+    "Krypteia: A military training ritual for Spartan warriors in the borderland of Pamisos, where hunting criminals is often livestreamed. This serves to strengthen Spartan dominance and maintain security.",
   cityFeatures: [
     "Training zones consisting of dense forests and rough terrain",
     "Central control center with advanced surveillance systems",

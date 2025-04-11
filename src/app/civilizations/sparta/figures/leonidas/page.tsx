@@ -9,7 +9,7 @@ export default function SpartaLeonidasPage() {
         <h2 className="text-2xl font-semibold mb-4">Figure Profile</h2>
         <p className="text-gray-300 mb-4">
           General Leonidas is a descendant of the legendary King Leonidas,
-          commanding Sparta's military forces and maintaining the Crypteia
+          commanding Sparta's military forces and maintaining the Krypteia
           program.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -20,14 +20,14 @@ export default function SpartaLeonidasPage() {
             <ul className="list-disc list-inside text-gray-300">
               <li>Military Strategy Development</li>
               <li>Combat Training Systematization</li>
-              <li>Crypteia Program Management</li>
+              <li>Krypteia Program Management</li>
             </ul>
           </div>
           <div className="bg-gray-700 p-4 rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Roles</h3>
             <ul className="list-disc list-inside text-gray-300">
               <li>Military Commander</li>
-              <li>Crypteia Program Director</li>
+              <li>Krypteia Program Director</li>
               <li>Strategist</li>
             </ul>
           </div>

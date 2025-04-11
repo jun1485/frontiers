@@ -13,9 +13,9 @@ export const spartaData: CityData = {
         "The ruling council of Sparta, comprised of citizens over the age of 60. They make all major decisions for the society.",
     },
     {
-      name: "The Crypteia Command Center",
+      name: "The Krypteia Command Center",
       description:
-        "Headquarters for Sparta's elite intelligence and security force. They monitor and control the Crypteia ritual activities that take place in Pamisos.",
+        "Headquarters for Sparta's elite intelligence and security force. They monitor and control the Krypteia ritual activities that take place in Pamisos.",
     },
     {
       name: "The Lycurgus Academy",
@@ -34,7 +34,7 @@ export const spartaData: CityData = {
       name: "General Leonidas",
       role: "Military Commander",
       description:
-        "Descendant of the legendary King Leonidas, he leads Sparta's military forces and maintains the Crypteia program.",
+        "Descendant of the legendary King Leonidas, he leads Sparta's military forces and maintains the Krypteia program.",
     },
   ],
   coreTechnologies: [
@@ -65,7 +65,7 @@ export const spartaData: CityData = {
     },
   ],
   militarySystem:
-    "The Spartan military system is central to their society. All citizens undergo mandatory military training, and the society maintains a permanent standing army. The Crypteia serves as both a training ritual and a method of population control.",
+    "The Spartan military system is central to their society. All citizens undergo mandatory military training, and the society maintains a permanent standing army. The Krypteia serves as both a training ritual and a method of population control.",
   cityFeatures: [
     "Minimalist, utilitarian architecture emphasizing function over form",
     "Central military parade ground surrounded by government buildings",

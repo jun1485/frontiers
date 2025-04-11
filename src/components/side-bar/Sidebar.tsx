@@ -82,7 +82,7 @@ export default function Sidebar() {
               href={section.href}
               className={`font-semibold text-lg block border-b pb-1 transition-colors duration-150 ${
                 pathname === section.href
-                  ? "text-purple-400 border-cyan-800"
+                  ? "text-yellow-400 border-cyan-800"
                   : "text-cyan-400 hover:text-cyan-300 border-cyan-800"
               }`}
             >

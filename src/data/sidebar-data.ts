@@ -195,8 +195,8 @@ export const chaptersData = [
             href: "/civilizations/sparta/institutions/gerousia",
           },
           {
-            name: "Crypteia Command",
-            href: "/civilizations/sparta/institutions/crypteia",
+            name: "Krypteia Command",
+            href: "/civilizations/sparta/institutions/krypteia",
           },
         ],
       },
@@ -233,8 +233,8 @@ export const chaptersData = [
         key: "sparta-military",
         items: [
           {
-            name: "Crypteia",
-            href: "/civilizations/sparta/military/crypteia",
+            name: "Krypteia",
+            href: "/civilizations/sparta/military/krypteia",
           },
           {
             name: "Military Organization",
@@ -253,11 +253,7 @@ export const chaptersData = [
 
 export const mainSections = [
   {
-    title: "I. Ancient Egyptian Mythology",
-    href: "/mythology",
-  },
-  {
-    title: "II. Frontiers Universe",
+    title: "Frontiers Universe",
     href: "/universe",
   },
 ];

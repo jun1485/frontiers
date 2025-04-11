@@ -14,7 +14,6 @@ export default function EgyptPopulationPage() {
             alt="New Egypt Cityscape"
             fill
             priority
-            className="object-cover"
           />
         </div>
         <p className="text-gray-300">

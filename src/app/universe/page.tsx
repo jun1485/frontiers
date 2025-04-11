@@ -116,7 +116,7 @@ export default function UniversePage() {
                   Key Institutions
                 </h4>
                 <p className="text-gray-400 text-sm">
-                  Palatium (cooperative living spaces), Crypteia (military
+                  Palatium (cooperative living spaces), Krypteia (military
                   training rituals in isolated forests)
                 </p>
               </div>
