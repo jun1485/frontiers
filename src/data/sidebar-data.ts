@@ -31,8 +31,9 @@ export const chaptersData = [
     key: "egypt",
     subSections: [
       {
-        title: "Population Information",
-        key: "egypt-population",
+        title: "Overview",
+        key: "egypt-overview",
+        href: "/civilizations/egypt/overview",
         items: [
           {
             name: "Population Composition",
@@ -101,8 +102,9 @@ export const chaptersData = [
     key: "rome",
     subSections: [
       {
-        title: "Population Information",
-        key: "rome-population",
+        title: "Overview",
+        key: "rome-overview",
+        href: "/civilizations/rome/overview",
         items: [
           {
             name: "Population Composition",
@@ -174,8 +176,9 @@ export const chaptersData = [
     key: "sparta",
     subSections: [
       {
-        title: "Population Information",
-        key: "sparta-population",
+        title: "Overview",
+        key: "sparta-overview",
+        href: "/civilizations/sparta/overview",
         items: [
           {
             name: "Population Composition",
