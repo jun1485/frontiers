@@ -2,6 +2,7 @@
 
 import React from "react";
 import SubSection from "./SubSection";
+import { ChevronIcon } from "../icons";
 
 interface ChapterSectionProps {
   title: string;
@@ -10,6 +11,7 @@ interface ChapterSectionProps {
   subSections: {
     title: string;
     key: string;
+    href?: string;
     items: {
       name: string;
       href: string;
@@ -35,22 +37,7 @@ const ChapterSection: React.FC<ChapterSectionProps> = ({
       className="flex items-center justify-between w-full font-semibold text-lg text-cyan-400 hover:text-cyan-300 border-b border-cyan-800 pb-1 transition-colors duration-150 cursor-pointer"
     >
       {title}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className={`h-4 w-4 transition-transform duration-200 ${
-          isOpen ? "transform rotate-180" : ""
-        }`}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19 9l-7 7-7-7"
-        />
-      </svg>
+      <ChevronIcon className="h-4 w-4" isOpen={isOpen} />
     </button>
     {isOpen && (
       <div className="mt-2 ml-2">
@@ -62,6 +49,7 @@ const ChapterSection: React.FC<ChapterSectionProps> = ({
             toggleOpen={() => toggleSubSection(subSection.key)}
             items={subSection.items}
             currentPath={currentPath}
+            href={subSection.href}
           />
         ))}
       </div>
