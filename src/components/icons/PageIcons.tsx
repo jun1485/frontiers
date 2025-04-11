@@ -111,7 +111,7 @@ export const ArrowIcon = () => (
 // 눈 아이콘
 export const EyeIcon = () => (
   <svg
-    className="h-6 w-6"
+    className="h-6 w-6 mr-2 shrink-0"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -123,5 +123,103 @@ export const EyeIcon = () => (
       d="M2 12C2 12 5.63636 7 12 7C18.3636 7 22 12 22 12C22 12 18.3636 17 12 17C5.63636 17 2 12 2 12Z"
     />
     <circle cx="12" cy="12" r="3" />
+  </svg>
+);
+
+// 상하 방향 화살표 아이콘
+export interface ChevronIconProps {
+  className?: string;
+  isOpen?: boolean;
+}
+
+export const ChevronIcon: React.FC<ChevronIconProps> = ({
+  className = "",
+  isOpen = false,
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className={`transition-transform duration-200 ${
+      isOpen ? "transform rotate-180" : ""
+    } ${className}`}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M19 9l-7 7-7-7"
+    />
+  </svg>
+);
+
+// 메인 페이지용 작은 책 아이콘
+export interface IconProps {
+  className?: string;
+}
+
+export const SmallBookIcon: React.FC<IconProps> = ({
+  className = "h-6 w-6 text-amber-400 mr-2 shrink-0",
+}) => (
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+    />
+  </svg>
+);
+
+// 달/밤 아이콘
+export const MoonIcon: React.FC<IconProps> = ({
+  className = "h-6 w-6 text-purple-400 mr-2 shrink-0",
+}) => (
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+    />
+  </svg>
+);
+
+// 사이드바 로고용 눈 아이콘
+export const FrontiersEyeIcon: React.FC<IconProps> = ({
+  className = "h-7 w-7 mr-2 text-cyan-400",
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path
+      d="M2 12C2 12 5.63636 7 12 7C18.3636 7 22 12 22 12C22 12 18.3636 17 12 17C5.63636 17 2 12 2 12Z"
+      strokeWidth="1.5"
+    />
+    <circle cx="12" cy="12" r="3" />
+    <path d="M7 17S9 18.5 12 18.5 17 17 17 17" strokeWidth="1.5" />
+    <path d="M3 9L5 9M19 9L21 9" strokeWidth="1.5" />
+    <path d="M3 15L5 15M19 15L21 15" strokeWidth="1.5" />
+    <path d="M12 4.5V7" strokeWidth="1.5" />
+    <path d="M8 5.5L9 7" strokeWidth="1.5" />
+    <path d="M16 5.5L15 7" strokeWidth="1.5" />
   </svg>
 );

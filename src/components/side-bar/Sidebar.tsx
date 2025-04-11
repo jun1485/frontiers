@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import ChapterSection from "./ChapterSection";
 import { chaptersData, mainSections } from "@/data/sidebar-data";
+import { FrontiersEyeIcon } from "@/components/icons";
 
 // 사이드바 컴포넌트
 export default function Sidebar() {
@@ -70,28 +71,7 @@ export default function Sidebar() {
         onClick={() => router.push("/")}
         className="text-2xl font-bold mb-8 text-purple-400 tracking-tight flex items-center cursor-pointer"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-7 w-7 mr-2 text-cyan-400"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path
-            d="M2 12C2 12 5.63636 7 12 7C18.3636 7 22 12 22 12C22 12 18.3636 17 12 17C5.63636 17 2 12 2 12Z"
-            strokeWidth="1.5"
-          />
-          <circle cx="12" cy="12" r="3" />
-          <path d="M7 17S9 18.5 12 18.5 17 17 17 17" strokeWidth="1.5" />
-          <path d="M3 9L5 9M19 9L21 9" strokeWidth="1.5" />
-          <path d="M3 15L5 15M19 15L21 15" strokeWidth="1.5" />
-          <path d="M12 4.5V7" strokeWidth="1.5" />
-          <path d="M8 5.5L9 7" strokeWidth="1.5" />
-          <path d="M16 5.5L15 7" strokeWidth="1.5" />
-        </svg>
+        <FrontiersEyeIcon />
         Frontiers Wiki
       </h1>
 
