@@ -1,7 +1,6 @@
 import React from "react";
 import { romanCities } from "../cities";
-import CityCard from "@/components/CityCard";
-import { CardLayout } from "@/components";
+import { CardLayout, CityCard } from "@/components";
 
 export default function RomeCitiesPage() {
   return (

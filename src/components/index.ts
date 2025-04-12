@@ -15,3 +15,4 @@ export * from "./side-bar";
 
 // City
 export * from "./city";
+export { default as CityCard } from "./CityCard";
