@@ -1,10 +1,12 @@
+import React from "react";
+import { CardLayout } from "@/components";
 import { cairoData } from "@/data/cities/cairo";
 import CityCard from "@/components/CityCard";
 
 export default function CairoPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <CardLayout>
       <CityCard city={cairoData} />
-    </div>
+    </CardLayout>
   );
 }

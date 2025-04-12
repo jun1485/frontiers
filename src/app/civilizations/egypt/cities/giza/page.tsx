@@ -1,10 +1,12 @@
+import React from "react";
+import { CardLayout } from "@/components";
 import { gizaData } from "@/data/cities/giza";
 import CityCard from "@/components/CityCard";
 
 export default function GizaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <CardLayout>
       <CityCard city={gizaData} />
-    </div>
+    </CardLayout>
   );
 }

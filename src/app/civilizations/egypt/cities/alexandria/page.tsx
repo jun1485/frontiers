@@ -1,10 +1,10 @@
 import { alexandriaData } from "@/data/cities/alexandria";
 import CityCard from "@/components/CityCard";
-
+import { CardLayout } from "@/components";
 export default function AlexandriaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <CardLayout>
       <CityCard city={alexandriaData} />
-    </div>
+    </CardLayout>
   );
 }

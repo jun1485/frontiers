@@ -1,10 +1,11 @@
 import { spartaData } from "@/data/cities/sparta";
 import CityCard from "@/components/CityCard";
+import { CardLayout } from "@/components";
 
 export default function SpartaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <CardLayout>
       <CityCard city={spartaData} />
-    </div>
+    </CardLayout>
   );
 }

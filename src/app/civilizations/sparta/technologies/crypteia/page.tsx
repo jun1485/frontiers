@@ -1,9 +1,10 @@
 import React from "react";
+import { CardLayout } from "@/components";
 
 // 스파르타 사회 크립테이아 기술 페이지
-export default function SpartaKrypteiaTechPage() {
+export default function SpartaCrypteiaTechPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <CardLayout>
       <h1 className="text-3xl font-bold mb-6">Krypteia Technologies</h1>
       <div className="bg-gray-800 rounded-lg p-6">
         <h2 className="text-2xl font-semibold mb-4">Key Technologies</h2>
@@ -32,6 +33,6 @@ export default function SpartaKrypteiaTechPage() {
           </div>
         </div>
       </div>
-    </div>
+    </CardLayout>
   );
 }

@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
+import { CardLayout } from "@/components";
 
 export default function SpartaMilitaryOrganizationPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <CardLayout>
       <h1 className="text-3xl font-bold mb-6">Spartan Military Organization</h1>
       <div className="prose max-w-none">
         <p className="mb-4">
@@ -16,6 +17,6 @@ export default function SpartaMilitaryOrganizationPage() {
           added soon.
         </p>
       </div>
-    </div>
+    </CardLayout>
   );
 }

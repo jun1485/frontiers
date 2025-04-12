@@ -1,9 +1,10 @@
 import React from "react";
+import { CardLayout } from "@/components";
 
 // 신 이집트 정부 기관 페이지
 export default function EgyptGovernmentPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <CardLayout>
       <h1 className="text-3xl font-bold mb-6">
         New Egypt Government Institutions
       </h1>
@@ -21,6 +22,6 @@ export default function EgyptGovernmentPage() {
           <li>Cabinet Council</li>
         </ul>
       </div>
-    </div>
+    </CardLayout>
   );
 }

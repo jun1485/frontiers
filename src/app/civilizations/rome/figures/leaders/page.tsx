@@ -1,9 +1,10 @@
 import React from "react";
+import { CardLayout } from "@/components";
 
 // 로마 제국 정치 지도자 페이지
 export default function RomeLeadersPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <CardLayout>
       <h1 className="text-3xl font-bold mb-6">
         Roman Empire Political Leaders
       </h1>
@@ -24,6 +25,6 @@ export default function RomeLeadersPage() {
           </div>
         </div>
       </div>
-    </div>
+    </CardLayout>
   );
 }

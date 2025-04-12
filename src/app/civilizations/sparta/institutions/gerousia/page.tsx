@@ -1,9 +1,10 @@
 import React from "react";
+import { CardLayout } from "@/components";
 
 // 스파르타 사회 게루시아 기관 페이지
 export default function SpartaGerousiaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <CardLayout>
       <h1 className="text-3xl font-bold mb-6">
         The Gerousia (Council of Elders)
       </h1>
@@ -22,6 +23,6 @@ export default function SpartaGerousiaPage() {
           <li>Preserving Traditional Values</li>
         </ul>
       </div>
-    </div>
+    </CardLayout>
   );
 }

@@ -1,9 +1,10 @@
 import React from "react";
+import { CardLayout } from "@/components";
 
 // 로마 제국 정보 작전 기술 페이지
 export default function RomeIntelTechPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <CardLayout>
       <h1 className="text-3xl font-bold mb-6">
         Intelligence Operations Technology
       </h1>
@@ -32,6 +33,6 @@ export default function RomeIntelTechPage() {
           </div>
         </div>
       </div>
-    </div>
+    </CardLayout>
   );
 }

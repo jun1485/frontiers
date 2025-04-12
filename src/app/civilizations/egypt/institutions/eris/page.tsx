@@ -1,9 +1,10 @@
 import React from "react";
+import { CardLayout } from "@/components";
 
 // New Egypt ERIS Institution Page
 export default function EgyptERISPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <CardLayout>
       <h1 className="text-3xl font-bold mb-6">
         ERIS (Eye of Ra Intelligence Service)
       </h1>
@@ -27,6 +28,6 @@ export default function EgyptERISPage() {
           <li>Logistics Support Department (Aswan)</li>
         </ul>
       </div>
-    </div>
+    </CardLayout>
   );
 }

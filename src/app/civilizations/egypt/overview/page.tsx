@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { CardLayout } from "@/components/index";
 
 export default function EgyptOverviewPage() {
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl bg-gray-900 text-gray-200">
+    <CardLayout className="max-w-6xl bg-gray-900 text-gray-200">
       <div className="border-b border-gray-700 pb-4 mb-6">
         <h1 className="text-4xl font-bold text-white">New Egypt</h1>
         <p className="text-lg text-gray-400 mt-2">
@@ -403,6 +404,6 @@ export default function EgyptOverviewPage() {
           </div>
         </div>
       </div>
-    </div>
+    </CardLayout>
   );
 }

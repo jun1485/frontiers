@@ -1,9 +1,10 @@
 import React from "react";
+import { CardLayout } from "@/components";
 
 // 스파르타 사회 레오니다스 장군 페이지
 export default function SpartaLeonidasPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <CardLayout>
       <h1 className="text-3xl font-bold mb-6">General Leonidas</h1>
       <div className="bg-gray-800 rounded-lg p-6">
         <h2 className="text-2xl font-semibold mb-4">Figure Profile</h2>
@@ -33,6 +34,6 @@ export default function SpartaLeonidasPage() {
           </div>
         </div>
       </div>
-    </div>
+    </CardLayout>
   );
 }
