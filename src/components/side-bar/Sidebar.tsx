@@ -5,7 +5,12 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import ChapterSection from "./ChapterSection";
 import { chaptersData, mainSections } from "@/data/sidebar-data";
-import { FrontiersEyeIcon } from "@/components/icons";
+import {
+  FrontiersEyeIcon,
+  InstagramIcon,
+  YouTubeIcon,
+  RedditIcon,
+} from "@/components/icons";
 
 // 사이드바 컴포넌트
 export default function Sidebar() {
@@ -67,46 +72,81 @@ export default function Sidebar() {
 
   return (
     <aside className="w-72 bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 p-6 fixed h-full overflow-y-auto shadow-lg border-r border-gray-700">
-      <h1
-        onClick={() => router.push("/")}
-        className="text-2xl font-bold mb-8 text-purple-400 tracking-tight flex items-center cursor-pointer"
-      >
-        <FrontiersEyeIcon />
-        Frontiers Wiki
-      </h1>
+      <div className="flex flex-col justify-between h-full">
+        <h1
+          onClick={() => router.push("/")}
+          className="text-2xl font-bold mb-8 text-purple-400 tracking-tight flex items-center cursor-pointer"
+        >
+          <FrontiersEyeIcon />
+          Frontiers Wiki
+        </h1>
 
-      <nav className="space-y-3 mb-6">
-        {mainSections.map((section, index) => (
-          <div key={index}>
-            <Link
-              href={section.href}
-              className={`font-semibold text-lg block border-b pb-1 transition-colors duration-150 ${
-                pathname === section.href
-                  ? "text-yellow-400 border-cyan-800"
-                  : "text-cyan-400 hover:text-cyan-300 border-cyan-800"
-              }`}
+        <nav className="space-y-3 mb-6">
+          {mainSections.map((section, index) => (
+            <div key={index}>
+              <Link
+                href={section.href}
+                className={`font-semibold text-lg block border-b pb-1 transition-colors duration-150 ${
+                  pathname === section.href
+                    ? "text-yellow-400 border-cyan-800"
+                    : "text-cyan-400 hover:text-cyan-300 border-cyan-800"
+                }`}
+              >
+                {section.title}
+              </Link>
+            </div>
+          ))}
+        </nav>
+
+        <div className="mt-6">
+          <h2 className="text-xl font-bold mb-4">Civilizations</h2>
+
+          {chaptersData.map((chapter, idx) => (
+            <ChapterSection
+              key={idx}
+              title={chapter.title}
+              isOpen={openChapters[chapter.key] || false}
+              toggleOpen={() => toggleChapter(chapter.key)}
+              subSections={chapter.subSections}
+              openSubSections={openSubSections}
+              toggleSubSection={toggleSubSection}
+              currentPath={pathname || ""}
+            />
+          ))}
+        </div>
+
+        {/* 소셜 미디어 링크 섹션 추가 */}
+        <div className="mt-auto pb-4">
+          <h3 className="text-sm font-semibold text-gray-400 mb-3">
+            Follow Us
+          </h3>
+          <div className="flex space-x-4">
+            <a
+              href="https://www.instagram.com/midaiartwork/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-500 transition-colors duration-200"
             >
-              {section.title}
-            </Link>
+              <InstagramIcon className="h-6 w-6" />
+            </a>
+            <a
+              href="https://www.youtube.com/@midaiartwork?fbclid=PAZXh0bgNhZW0CMTEAAafztEJg0RnsIpRhs_UD3CjBrbRW9bQ6BcC2E0avdAo9fl3X0p-_xF2nbmhuWQ_aem_pOQAT3zYPcJ-xh9J3O6t_Q"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-red-600 transition-colors duration-200"
+            >
+              <YouTubeIcon className="h-6 w-6" />
+            </a>
+            <a
+              href="https://reddit.com/user/frontbackend/submitted"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-orange-600 transition-colors duration-200"
+            >
+              <RedditIcon className="h-6 w-6" />
+            </a>
           </div>
-        ))}
-      </nav>
-
-      <div className="mt-6">
-        <h2 className="text-xl font-bold mb-4">Civilizations</h2>
-
-        {chaptersData.map((chapter, idx) => (
-          <ChapterSection
-            key={idx}
-            title={chapter.title}
-            isOpen={openChapters[chapter.key] || false}
-            toggleOpen={() => toggleChapter(chapter.key)}
-            subSections={chapter.subSections}
-            openSubSections={openSubSections}
-            toggleSubSection={toggleSubSection}
-            currentPath={pathname || ""}
-          />
-        ))}
+        </div>
       </div>
     </aside>
   );
