@@ -13,75 +13,78 @@ export default function EgyptOverviewPage() {
 
       <div className="flex flex-col md:flex-row gap-6">
         <div className="md:w-2/3">
-          <div className="mb-8">
-            <p className="mb-4">
-              <span className="font-bold text-white">New Egypt</span> is the
-              first human settlement established on Mars in 2139. It is
-              characterized by inheriting the cultural heritage of ancient Egypt
-              while maintaining a futuristic social structure.
-            </p>
-            <p>
-              New Egypt is located in the northern Aresia Plains of Mars and has
-              grown into a medium-sized city-state with a population of
-              approximately 1.5 million. The administrative capital is{" "}
-              <span className="italic">Nova Cairo</span>, and the official
-              languages are Neo-Egyptian and English.
-            </p>
-          </div>
-
-          {/* 목차 */}
-          <div className="bg-gray-800 p-4 mb-8 border border-gray-700 rounded-lg">
-            <h2 className="text-xl font-bold mb-2 text-white">Contents</h2>
-            <ol className="list-decimal list-inside text-gray-300">
-              <li className="mb-1">
-                <a
-                  href="#history"
-                  className="hover:text-blue-400 hover:underline cursor-pointer"
-                >
-                  History
-                </a>
-              </li>
-              <li className="mb-1">
-                <a
-                  href="#geography"
-                  className="hover:text-blue-400 hover:underline cursor-pointer"
-                >
-                  Geography
-                </a>
-              </li>
-              <li className="mb-1">
-                <a
-                  href="#politics"
-                  className="hover:text-blue-400 hover:underline cursor-pointer"
-                >
-                  Politics
-                </a>
-              </li>
-              <li className="mb-1">
-                <a
-                  href="#economy"
-                  className="hover:text-blue-400 hover:underline cursor-pointer"
-                >
-                  Economy
-                </a>
-              </li>
-              <li className="mb-1">
-                <a
-                  href="#demographics"
-                  className="hover:text-blue-400 hover:underline cursor-pointer"
-                >
-                  Demographics
-                </a>
-              </li>
-              <li className="mb-1">
-                <a
-                  href="#culture"
-                  className="hover:text-blue-400 hover:underline cursor-pointer"
-                >
-                  Culture
-                </a>
-              </li>
-            </ol>
+          <div className="mb-2 flex gap-4">
+            {/* 목차 */}
+            <div className="bg-gray-800 p-4 mb-8 border border-gray-700 rounded-lg min-w-[200px] w-fit">
+              <h2 className="text-xl font-bold mb-2 text-white w-fit">
+                Contents
+              </h2>
+              <ol className="list-decimal list-inside text-gray-300 w-fit">
+                <li className="mb-1">
+                  <a
+                    href="#history"
+                    className="hover:text-blue-400 hover:underline cursor-pointer"
+                  >
+                    History
+                  </a>
+                </li>
+                <li className="mb-1">
+                  <a
+                    href="#geography"
+                    className="hover:text-blue-400 hover:underline cursor-pointer"
+                  >
+                    Geography
+                  </a>
+                </li>
+                <li className="mb-1">
+                  <a
+                    href="#politics"
+                    className="hover:text-blue-400 hover:underline cursor-pointer"
+                  >
+                    Politics
+                  </a>
+                </li>
+                <li className="mb-1">
+                  <a
+                    href="#economy"
+                    className="hover:text-blue-400 hover:underline cursor-pointer"
+                  >
+                    Economy
+                  </a>
+                </li>
+                <li className="mb-1">
+                  <a
+                    href="#demographics"
+                    className="hover:text-blue-400 hover:underline cursor-pointer"
+                  >
+                    Demographics
+                  </a>
+                </li>
+                <li className="mb-1">
+                  <a
+                    href="#culture"
+                    className="hover:text-blue-400 hover:underline cursor-pointer"
+                  >
+                    Culture
+                  </a>
+                </li>
+              </ol>
+            </div>
+            <div>
+              <span className="inline-block mb-4">
+                <span className="font-bold text-white">New Egypt</span> is the
+                first human settlement established on Mars in 2139. It is
+                characterized by inheriting the cultural heritage of ancient
+                Egypt while maintaining a futuristic social structure.
+              </span>
+              <p>
+                New Egypt is located in the northern Aresia Plains of Mars and
+                has grown into a medium-sized city-state with a population of
+                approximately 1.5 million. The administrative capital is{" "}
+                <span className="italic">Nova Cairo</span>, and the official
+                languages are Neo-Egyptian and English.
+              </p>
+            </div>
           </div>
 
           {/* 역사 섹션 */}
@@ -130,7 +133,7 @@ export default function EgyptOverviewPage() {
             {/* 지도 이미지 */}
             <div className="relative w-full h-96 my-6">
               <Image
-                src="/civilizations/new-egypt-map.png"
+                src="/civilizations/egypt-geography.png"
                 alt="Map of New Egypt"
                 fill
                 className="object-contain"
