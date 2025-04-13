@@ -3,13 +3,12 @@ import { notFound } from "next/navigation";
 import CityLayout from "../CityLayout";
 import { getCityData } from "@/utils/city-utils";
 
+type pageParams = Promise<{ cityName: string }>;
+
 // 다이나믹 도시 페이지
-export default async function CityPage({
-  params,
-}: {
-  params: { cityName: string };
-}) {
-  const cityData = getCityData(params.cityName);
+export default async function CityPage({ params }: { params: pageParams }) {
+  const { cityName } = await params;
+  const cityData = getCityData(cityName);
 
   if (!cityData) {
     notFound();
@@ -19,7 +18,7 @@ export default async function CityPage({
 }
 
 // 정적 생성을 위한 경로 생성 함수
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ cityName: string }[]> {
   const cityNames = [
     "rome",
     "sparta",
