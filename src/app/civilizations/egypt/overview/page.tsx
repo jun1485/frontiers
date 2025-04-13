@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { CardLayout } from "@/components/index";
+import OverviewNavList from "./nav/OverviewNavList";
 
 export default function EgyptOverviewPage() {
   return (
@@ -20,56 +21,7 @@ export default function EgyptOverviewPage() {
               <h2 className="text-xl font-bold mb-2 text-white w-fit">
                 Contents
               </h2>
-              <ol className="list-decimal list-inside text-gray-300 w-fit">
-                <li className="mb-1">
-                  <a
-                    href="#history"
-                    className="hover:text-blue-400 hover:underline cursor-pointer"
-                  >
-                    History
-                  </a>
-                </li>
-                <li className="mb-1">
-                  <a
-                    href="#geography"
-                    className="hover:text-blue-400 hover:underline cursor-pointer"
-                  >
-                    Geography
-                  </a>
-                </li>
-                <li className="mb-1">
-                  <a
-                    href="#politics"
-                    className="hover:text-blue-400 hover:underline cursor-pointer"
-                  >
-                    Politics
-                  </a>
-                </li>
-                <li className="mb-1">
-                  <a
-                    href="#economy"
-                    className="hover:text-blue-400 hover:underline cursor-pointer"
-                  >
-                    Economy
-                  </a>
-                </li>
-                <li className="mb-1">
-                  <a
-                    href="#demographics"
-                    className="hover:text-blue-400 hover:underline cursor-pointer"
-                  >
-                    Demographics
-                  </a>
-                </li>
-                <li className="mb-1">
-                  <a
-                    href="#culture"
-                    className="hover:text-blue-400 hover:underline cursor-pointer"
-                  >
-                    Culture
-                  </a>
-                </li>
-              </ol>
+              <OverviewNavList />
             </div>
             <div>
               <span className="inline-block mb-4">
