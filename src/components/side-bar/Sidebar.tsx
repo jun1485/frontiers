@@ -125,7 +125,7 @@ export default function Sidebar() {
               href="https://www.instagram.com/midaiartwork/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-pink-500 transition-colors duration-200"
+              className="text-pink-400 transition-colors duration-200"
             >
               <InstagramIcon className="h-6 w-6" />
             </a>
@@ -133,7 +133,7 @@ export default function Sidebar() {
               href="https://www.youtube.com/@midaiartwork?fbclid=PAZXh0bgNhZW0CMTEAAafztEJg0RnsIpRhs_UD3CjBrbRW9bQ6BcC2E0avdAo9fl3X0p-_xF2nbmhuWQ_aem_pOQAT3zYPcJ-xh9J3O6t_Q"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-red-600 transition-colors duration-200"
+              className="text-red-500 transition-colors duration-200"
             >
               <YouTubeIcon className="h-6 w-6" />
             </a>
@@ -141,7 +141,7 @@ export default function Sidebar() {
               href="https://reddit.com/user/frontbackend/submitted"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-orange-600 transition-colors duration-200"
+              className="text-orange-500 transition-colors duration-200"
             >
               <RedditIcon className="h-6 w-6" />
             </a>
