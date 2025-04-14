@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import SubSection from "./SubSection";
 import { ChevronIcon } from "../icons";

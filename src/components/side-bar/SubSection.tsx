@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import SidebarLink from "./SidebarLink";
 import Link from "next/link";

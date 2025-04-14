@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { CityData } from "@/types/city";
 import { getCivilizationColors } from "@/utils/civilization-styles";
