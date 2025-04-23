@@ -4,6 +4,7 @@ import { create } from "zustand";
 interface GameState {
   playerHealth: number;
   currentTurn: number;
+  playerStrength: number;
   deck: string[];
   hand: string[];
   increaseTurn: () => void;
@@ -15,6 +16,7 @@ interface GameState {
 export const useGameStore = create<GameState>((set) => ({
   playerHealth: 100,
   currentTurn: 1,
+  playerStrength: 0,
   deck: ["Attack", "Attack", "Defend", "Defend", "Special Move"],
   hand: [],
 
