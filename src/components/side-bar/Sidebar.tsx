@@ -5,12 +5,7 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import ChapterSection from "./ChapterSection";
 import { chaptersData, mainSections } from "@/data/sidebar-data";
-import {
-  FrontiersEyeIcon,
-  InstagramIcon,
-  YouTubeIcon,
-  RedditIcon,
-} from "@/components/icons";
+import { InstagramIcon, YouTubeIcon, RedditIcon } from "@/components/icons";
 
 // 사이드바 컴포넌트
 export default function Sidebar() {
@@ -80,10 +75,10 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* 모바일 햄버거 버튼 - 상단 여백 추가 */}
+      {/* 모바일 햄버거 버튼 - 위치 조정 */}
       <button
         onClick={toggleMobileMenu}
-        className="md:hidden fixed top-8 left-4 z-50 bg-gray-800 p-2 rounded-md"
+        className="md:hidden fixed top-3 left-4 z-50 bg-gray-800 p-2 rounded-md"
         aria-label="Toggle navigation menu"
       >
         <svg
@@ -106,14 +101,14 @@ export default function Sidebar() {
       <aside
         className={`${
           mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0 w-72 bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 p-6 fixed h-full overflow-y-auto shadow-lg border-r border-gray-700 z-40`}
+        } md:translate-x-0 w-72 bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 p-6 pt-4 sm:p-6 fixed h-full overflow-y-auto shadow-lg border-r border-gray-700 z-40`}
       >
         <div className="flex flex-col justify-between h-full">
+          {/* 로고 영역 - 아이콘 제거 */}
           <h1
             onClick={() => router.push("/")}
-            className="text-2xl font-bold mb-8 text-purple-400 tracking-tight flex items-center cursor-pointer"
+            className="text-2xl font-bold mb-8 text-purple-400 tracking-tight cursor-pointer ml-8 sm:ml-0"
           >
-            <FrontiersEyeIcon />
             Frontiers Wiki
           </h1>
 
