@@ -1,13 +1,45 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import { CardLayout } from "@/components/index";
 import OverviewNavList from "./nav/OverviewNavList";
 
 export default function EgyptOverviewPage() {
+  // 모바일 메뉴 표시 상태 관리
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  // 햄버거 메뉴 토글 함수
+  const toggleMobileMenu = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
+
   return (
     <CardLayout className="max-w-6xl bg-gray-900 text-gray-200">
       <div className="border-b border-gray-700 pb-4 mb-6">
-        <h1 className="text-4xl font-bold text-white">New Egypt</h1>
+        <div className="flex justify-between items-center">
+          <h1 className="text-4xl font-bold text-white">New Egypt</h1>
+          {/* 햄버거 버튼 (모바일에서만 표시) */}
+          <button
+            className="md:hidden text-white p-2"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
         <p className="text-lg text-gray-400 mt-2">
           Encyclopedia, the free knowledge repository.
         </p>
@@ -271,8 +303,10 @@ export default function EgyptOverviewPage() {
           </div>
         </div>
 
-        {/* 사이드바 (정보 상자) */}
-        <div className="md:w-1/3">
+        {/* 사이드바 (정보 상자) - 모바일에서는 조건부 표시 */}
+        <div
+          className={`${showMobileMenu ? "block" : "hidden"} md:block md:w-1/3`}
+        >
           <div className="border border-gray-700 bg-gray-800 rounded-lg p-4 sticky top-4">
             <h2 className="text-xl font-bold text-center border-b border-gray-700 pb-2 mb-4 text-white">
               New Egypt
